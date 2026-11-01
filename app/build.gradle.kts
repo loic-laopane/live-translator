@@ -12,8 +12,19 @@ android {
         applicationId = "com.livetranslator.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = (System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInt()
+        versionName = "1.0.${System.getenv("GITHUB_RUN_NUMBER") ?: "0"}"
+    }
+
+    signingConfigs {
+        // Shared debug keystore committed to the repo so that every CI build has the same
+        // signature: a new APK can then be installed over the previous one without uninstalling.
+        getByName("debug") {
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
     }
 
     buildTypes {

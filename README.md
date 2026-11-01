@@ -1,5 +1,15 @@
 # Live Translator (Android)
 
+## 📲 Télécharger
+
+**[⬇️ Télécharger le dernier APK](https://github.com/loic-laopane/live-translator/releases/latest/download/live-translator.apk)**
+
+L'APK est reconstruit et publié automatiquement après chaque merge sur `main`
+(historique dans les [Releases](https://github.com/loic-laopane/live-translator/releases)).
+Sur le téléphone, autorisez l'installation depuis des sources inconnues pour l'installer.
+
+## Présentation
+
 Application Android qui traduit **en direct** ce que vous écrivez vers la langue de votre choix.
 
 - **Aucune langue source à choisir** : la langue du texte est détectée automatiquement pendant la frappe.
@@ -33,5 +43,12 @@ Prérequis : Android Studio (ou JDK 17 + Android SDK 35).
 
 Ou ouvrez le dossier dans Android Studio et lancez sur un appareil/émulateur (Android 8.0+).
 
-Chaque push déclenche aussi le workflow GitHub Actions **Build APK**, qui publie l'APK de debug
-en artefact téléchargeable.
+## Intégration continue
+
+Le workflow GitHub Actions **Build APK** :
+- compile l'APK sur chaque pull request (vérification avant merge) ;
+- après chaque merge sur `main`, publie l'APK dans une nouvelle Release GitHub marquée « latest »,
+  ce qui met à jour le lien de téléchargement ci-dessus.
+
+Tous les APK sont signés avec la même clé (`app/debug.keystore`), ce qui permet d'installer une
+nouvelle version par-dessus l'ancienne sans désinstaller.

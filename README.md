@@ -19,9 +19,36 @@ Application Android qui traduit **en direct** ce que vous écrivez vers la langu
 - Plus de 50 langues supportées.
 - **Correction orthographique et grammaticale** : les fautes sont soulignées dans le texte, une
   **version corrigée** est proposée (applicable en un clic, en entier ou faute par faute).
-- **Règles expliquées** : chaque faute est accompagnée de la règle de grammaire ou du piège
-  concerné (ex. « Confusion a/à »), avec un lien « En savoir plus » quand il existe. Si le texte
-  n'est pas dans la langue du téléphone, l'explication est traduite dans la langue du téléphone.
+- **Langue maternelle** demandée au premier lancement (modifiable via l'icône en haut à droite) :
+  elle apparaît en tête des listes de langues et sert à expliquer les règles et traduire les cours.
+- **Règles expliquées dans votre langue** : chaque faute est accompagnée de la règle de grammaire
+  ou du piège concerné (ex. « Confusion a/à »), avec un lien « En savoir plus » quand il existe.
+  L'explication, le nom de la règle et sa catégorie sont traduits dans votre langue maternelle.
+- **Apprendre : mini-cours et quiz** de la seconde à la terminale (voir ci-dessous).
+
+## Apprendre : mini-cours et quiz
+
+L'onglet **Apprendre** propose des fiches de cours courtes suivies d'un quiz de 5 questions avec
+correction expliquée. Le meilleur score de chaque leçon est mémorisé.
+
+| Matière | Seconde | Première | Terminale |
+|---|---|---|---|
+| Français | Accord du participe passé · Homophones grammaticaux | Figures de style | |
+| Mathématiques | Fonctions affines | Second degré | Fonction exponentielle |
+| Anglais | Present perfect / prétérit | Phrases conditionnelles | |
+| Physique-Chimie | Mole et quantité de matière | Énergie cinétique, potentielle, mécanique | |
+| SVT | La cellule | | Mitose et méiose |
+| Histoire-Géographie | | Révolution française | Guerre froide |
+| Philosophie | | | Méthode de la dissertation · La conscience |
+
+Les cours sont rédigés en français. Si votre langue maternelle est différente, ils sont **traduits
+automatiquement sur l'appareil** (bouton « Voir l'original » disponible), sauf le français et
+l'anglais, dont les exemples et réponses portent sur la langue elle-même. Les réponses chiffrées
+ou formules ne sont jamais traduites.
+
+**Ajouter une leçon** : éditer le fichier de la matière dans `app/src/main/assets/learn/`
+(format : `sections` avec `title`/`body`, `quiz` avec `question`/`options`/`answer` (index de la
+bonne réponse)/`explanation`). Le test `LearnContentTest` vérifie automatiquement chaque fichier.
 
 ## Correction grammaticale (LanguageTool)
 
@@ -47,6 +74,8 @@ Code principal :
 - `app/src/main/java/com/livetranslator/app/ui/TranslatorScreen.kt` – interface Jetpack Compose
 - `app/src/main/java/com/livetranslator/app/grammar/` – client LanguageTool, parsing, application des corrections
 - `app/src/main/java/com/livetranslator/app/ui/GrammarSection.kt` – version corrigée et cartes « règle »
+- `app/src/main/java/com/livetranslator/app/learn/` + `ui/LearnScreen.kt` – cours, quiz, progression
+- `app/src/main/assets/learn/*.json` – contenu des cours et des quiz
 
 ## Compiler
 

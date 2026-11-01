@@ -21,8 +21,10 @@ data class GrammarIssue(
     val issueType: String,
     /** Link to a page explaining the rule in depth, when available. */
     val ruleUrl: String?,
-    /** [message] translated into the device language, when the text is in another language. */
+    /** [message] translated into the user's native language, when the text is in another language. */
     val translatedMessage: String? = null,
+    val translatedRuleDescription: String? = null,
+    val translatedCategory: String? = null,
 ) {
     val end: Int get() = offset + length
 

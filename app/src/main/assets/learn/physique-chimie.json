@@ -1,0 +1,161 @@
+{
+  "id": "physique-chimie",
+  "name": "Physique-Chimie",
+  "translatable": true,
+  "lessons": [
+    {
+      "id": "pc-mole",
+      "title": "La mole et la quantité de matière",
+      "level": "seconde",
+      "summary": "Compter les entités chimiques : n, M, N_A et concentration.",
+      "sections": [
+        {
+          "title": "La mole",
+          "body": "La mole (symbole mol) est l'unité de quantité de matière.\nUne mole contient N_A = 6,02 × 10²³ entités (atomes, molécules, ions) : c'est la constante d'Avogadro.\nRelation : n = N / N_A, où N est le nombre d'entités."
+        },
+        {
+          "title": "Masse molaire",
+          "body": "La masse molaire M (en g/mol) est la masse d'une mole d'entités.\n• n = m / M (m en grammes)\nLa masse molaire d'une molécule est la somme des masses molaires des atomes qui la composent.\nExemple : M(H₂O) = 2 × 1,0 + 16,0 = 18,0 g/mol."
+        },
+        {
+          "title": "Concentration en quantité de matière",
+          "body": "Pour une espèce dissoute : C = n / V (C en mol/L, n en mol, V en L).\nConcentration en masse : Cm = m / V (en g/L), et Cm = C × M."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Combien d'entités contient une mole ?",
+          "options": [
+            "6,02 × 10²³",
+            "6,02 × 10⁻²³",
+            "1 000",
+            "3,0 × 10⁸"
+          ],
+          "answer": 0,
+          "explanation": "C'est la constante d'Avogadro N_A."
+        },
+        {
+          "question": "Quelle est la quantité de matière dans 36 g d'eau (M = 18 g/mol) ?",
+          "options": [
+            "0,5 mol",
+            "2 mol",
+            "18 mol",
+            "648 mol"
+          ],
+          "answer": 1,
+          "explanation": "n = m / M = 36 / 18 = 2 mol."
+        },
+        {
+          "question": "M(CO₂) avec M(C) = 12 g/mol et M(O) = 16 g/mol :",
+          "options": [
+            "28 g/mol",
+            "44 g/mol",
+            "40 g/mol",
+            "32 g/mol"
+          ],
+          "answer": 1,
+          "explanation": "M = 12 + 2 × 16 = 44 g/mol."
+        },
+        {
+          "question": "0,2 mol de sel dissous dans 0,5 L : la concentration vaut :",
+          "options": [
+            "0,1 mol/L",
+            "0,4 mol/L",
+            "2,5 mol/L",
+            "0,7 mol/L"
+          ],
+          "answer": 1,
+          "explanation": "C = n / V = 0,2 / 0,5 = 0,4 mol/L."
+        },
+        {
+          "question": "La relation entre n, N et N_A est :",
+          "options": [
+            "n = N × N_A",
+            "n = N_A / N",
+            "n = N / N_A",
+            "n = N + N_A"
+          ],
+          "answer": 2,
+          "explanation": "Le nombre de moles est le nombre d'entités divisé par N_A."
+        }
+      ]
+    },
+    {
+      "id": "pc-energie",
+      "title": "Énergie cinétique, potentielle et mécanique",
+      "level": "premiere",
+      "summary": "Les formes d'énergie d'un système en mouvement et leur conservation.",
+      "sections": [
+        {
+          "title": "Énergie cinétique",
+          "body": "C'est l'énergie liée à la vitesse : Ec = ½ m v²\n(Ec en joules J, m en kg, v en m/s).\nSi la vitesse double, l'énergie cinétique est multipliée par 4."
+        },
+        {
+          "title": "Énergie potentielle de pesanteur",
+          "body": "Elle dépend de l'altitude : Epp = m g z\n(g ≈ 9,81 N/kg, z altitude en m, l'origine des altitudes étant choisie)."
+        },
+        {
+          "title": "Énergie mécanique",
+          "body": "Em = Ec + Epp\n• Sans frottements, l'énergie mécanique se conserve : ce que l'on perd en Epp est gagné en Ec.\n• Avec frottements, Em diminue : l'énergie perdue est dissipée (souvent sous forme de chaleur).\nThéorème de l'énergie cinétique : la variation de Ec est égale à la somme des travaux des forces appliquées."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Ec d'une balle de 0,5 kg lancée à 4 m/s :",
+          "options": [
+            "1 J",
+            "2 J",
+            "4 J",
+            "8 J"
+          ],
+          "answer": 2,
+          "explanation": "Ec = ½ × 0,5 × 4² = 0,25 × 16 = 4 J."
+        },
+        {
+          "question": "Si la vitesse est multipliée par 3, Ec est multipliée par :",
+          "options": [
+            "3",
+            "6",
+            "9",
+            "1,5"
+          ],
+          "answer": 2,
+          "explanation": "Ec dépend du carré de la vitesse : 3² = 9."
+        },
+        {
+          "question": "Epp d'un objet de 2 kg à 10 m d'altitude (g = 10 N/kg) :",
+          "options": [
+            "20 J",
+            "200 J",
+            "100 J",
+            "2 000 J"
+          ],
+          "answer": 1,
+          "explanation": "Epp = m g z = 2 × 10 × 10 = 200 J."
+        },
+        {
+          "question": "Sans frottements, lors d'une chute, l'énergie mécanique :",
+          "options": [
+            "augmente",
+            "diminue",
+            "se conserve",
+            "s'annule"
+          ],
+          "answer": 2,
+          "explanation": "En l'absence de frottements, Em = Ec + Epp reste constante."
+        },
+        {
+          "question": "Avec frottements, l'énergie mécanique :",
+          "options": [
+            "augmente",
+            "diminue",
+            "se conserve",
+            "devient négative"
+          ],
+          "answer": 1,
+          "explanation": "Une partie de l'énergie est dissipée en chaleur."
+        }
+      ]
+    }
+  ]
+}

@@ -22,7 +22,6 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import java.util.Locale
 
 data class TranslatorUiState(
     val input: String = "",
@@ -58,9 +57,13 @@ class TranslatorViewModel(application: Application) : AndroidViewModel(applicati
     private val grammarClient = LanguageToolClient()
     private val prefs = application.getSharedPreferences("settings", Context.MODE_PRIVATE)
 
+    init {
+        UserSettings.init(application)
+    }
+
     private val inputFlow = MutableStateFlow("")
     private val targetFlow = MutableStateFlow(
-        prefs.getString(KEY_TARGET, null) ?: Languages.defaultTarget()
+        prefs.getString(KEY_TARGET, null) ?: Languages.defaultTarget(UserSettings.nativeLanguage.value)
     )
     private val grammarEnabledFlow = MutableStateFlow(prefs.getBoolean(KEY_GRAMMAR, true))
 
@@ -75,9 +78,6 @@ class TranslatorViewModel(application: Application) : AndroidViewModel(applicati
     /** Last language confidently detected; used as fallback for very short / ambiguous input. */
     private var lastDetected: String? = null
 
-    /** Device language as an ML Kit code, used to explain grammar rules in the user's own language. */
-    private val deviceLanguage: String? = TranslateLanguage.fromLanguageTag(Locale.getDefault().language)
-
     init {
         viewModelScope.launch {
             combine(inputFlow.debounce(DEBOUNCE_MS), targetFlow) { text, target -> text to target }
@@ -87,9 +87,13 @@ class TranslatorViewModel(application: Application) : AndroidViewModel(applicati
         }
         viewModelScope.launch {
             // Longer debounce: the grammar check is a network call with a per-minute quota.
-            combine(inputFlow.debounce(GRAMMAR_DEBOUNCE_MS), grammarEnabledFlow) { text, on -> text to on }
+            combine(
+                inputFlow.debounce(GRAMMAR_DEBOUNCE_MS),
+                grammarEnabledFlow,
+                UserSettings.nativeLanguage,
+            ) { text, on, native -> Triple(text, on, native) }
                 .distinctUntilChanged()
-                .mapLatest { (text, on) -> checkGrammar(text, on) }
+                .mapLatest { (text, on, native) -> checkGrammar(text, on, native) }
                 .collect { }
         }
     }
@@ -168,14 +172,14 @@ class TranslatorViewModel(application: Application) : AndroidViewModel(applicati
         }
     }
 
-    private suspend fun checkGrammar(text: String, enabled: Boolean) {
+    private suspend fun checkGrammar(text: String, enabled: Boolean, native: String?) {
         if (!enabled || text.isBlank()) {
             _state.update { it.copy(grammar = GrammarUiState(enabled = enabled)) }
             return
         }
         _state.update { it.copy(grammar = it.grammar.copy(checking = true, error = null)) }
         try {
-            val result = grammarClient.check(text, deviceLanguage)
+            val result = grammarClient.check(text, native)
             _state.update {
                 it.copy(
                     grammar = GrammarUiState(
@@ -186,7 +190,7 @@ class TranslatorViewModel(application: Application) : AndroidViewModel(applicati
                     )
                 )
             }
-            explainInDeviceLanguage(text, result.languageCode, result.issues)
+            explainInNativeLanguage(text, result.languageCode, result.issues, native)
         } catch (e: CancellationException) {
             throw e
         } catch (e: RateLimitedException) {
@@ -197,29 +201,44 @@ class TranslatorViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     /**
-     * LanguageTool explains rules in the language of the text. When that is not the user's language,
-     * translate the explanations on-device so that the rules stay understandable.
+     * LanguageTool explains rules in the language of the text. When that is not the user's native
+     * language, translate the explanation, the rule name and its category on-device, so that every
+     * rule is explained in the user's own language.
      */
-    private suspend fun explainInDeviceLanguage(text: String, languageCode: String?, issues: List<GrammarIssue>) {
+    private suspend fun explainInNativeLanguage(
+        text: String,
+        languageCode: String?,
+        issues: List<GrammarIssue>,
+        native: String?,
+    ) {
         val source = languageCode?.substringBefore('-')?.let { TranslateLanguage.fromLanguageTag(it) } ?: return
-        val target = deviceLanguage ?: return
+        val target = native ?: return
         if (source == target || issues.isEmpty()) return
 
-        val translations = mutableMapOf<String, String?>()
-        for (message in issues.map { it.message }.distinct()) {
-            translations[message] = try {
-                engine.translate(message, source, target)
+        val toTranslate = issues.flatMap { listOf(it.message, it.ruleDescription, it.category) }
+            .filter { it.isNotBlank() }
+            .distinct()
+        val translations = mutableMapOf<String, String>()
+        for (sentence in toTranslate) {
+            try {
+                translations[sentence] = engine.translate(sentence, source, target)
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
-                null
+                // Keep the original wording for this one.
             }
         }
         _state.update { state ->
             if (state.grammar.checkedText != text) return@update state
             state.copy(
                 grammar = state.grammar.copy(
-                    issues = state.grammar.issues.map { it.copy(translatedMessage = translations[it.message]) },
+                    issues = state.grammar.issues.map {
+                        it.copy(
+                            translatedMessage = translations[it.message],
+                            translatedRuleDescription = translations[it.ruleDescription],
+                            translatedCategory = translations[it.category],
+                        )
+                    },
                 )
             )
         }

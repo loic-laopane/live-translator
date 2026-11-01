@@ -21,7 +21,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.ContentCopy
-import androidx.compose.material.icons.filled.Translate
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -35,10 +34,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -56,114 +53,102 @@ import com.livetranslator.app.Languages
 import com.livetranslator.app.Status
 import com.livetranslator.app.TranslatorViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TranslatorScreen(vm: TranslatorViewModel = viewModel()) {
+fun TranslatorScreen(
+    nativeLanguage: String?,
+    modifier: Modifier = Modifier,
+    vm: TranslatorViewModel = viewModel(),
+) {
     val state by vm.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("Live Translator") },
-                navigationIcon = {
-                    Icon(
-                        Icons.Default.Translate,
-                        contentDescription = null,
-                        modifier = Modifier.padding(horizontal = 12.dp),
-                    )
-                },
-            )
-        },
-    ) { padding ->
-        Column(
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .imePadding()
+            .verticalScroll(rememberScrollState())
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+    ) {
+        TargetLanguagePicker(
+            selected = state.targetLanguage,
+            nativeLanguage = nativeLanguage,
+            onSelect = vm::onTargetChange,
+        )
+
+        GrammarToggle(
+            enabled = state.grammar.enabled,
+            onChange = vm::onGrammarEnabledChange,
+        )
+
+        val grammarUpToDate = state.grammar.checkedText == state.input
+        val errorColor = MaterialTheme.colorScheme.error
+
+        OutlinedTextField(
+            value = state.input,
+            onValueChange = vm::onInputChange,
             modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .imePadding()
-                .verticalScroll(rememberScrollState())
-                .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+                .fillMaxWidth()
+                .heightIn(min = 160.dp),
+            label = { Text("Écrivez dans n'importe quelle langue") },
+            visualTransformation = if (grammarUpToDate && state.grammar.issues.isNotEmpty()) {
+                ErrorHighlightTransformation(state.grammar.issues, errorColor)
+            } else {
+                VisualTransformation.None
+            },
+            supportingText = { DetectedLanguageLabel(state.detectedLanguage, state.status) },
+            trailingIcon = {
+                if (state.input.isNotEmpty()) {
+                    IconButton(onClick = vm::clear) {
+                        Icon(Icons.Default.Clear, contentDescription = "Effacer")
+                    }
+                }
+            },
+        )
+
+        GrammarSection(
+            grammar = state.grammar,
+            upToDate = grammarUpToDate,
+            onApplyAll = vm::applyAllCorrections,
+            onApply = vm::applyCorrection,
+        )
+
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+            ),
         ) {
-            TargetLanguagePicker(
-                selected = state.targetLanguage,
-                onSelect = vm::onTargetChange,
-            )
-
-            GrammarToggle(
-                enabled = state.grammar.enabled,
-                onChange = vm::onGrammarEnabledChange,
-            )
-
-            val grammarUpToDate = state.grammar.checkedText == state.input
-            val errorColor = MaterialTheme.colorScheme.error
-
-            OutlinedTextField(
-                value = state.input,
-                onValueChange = vm::onInputChange,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .heightIn(min = 160.dp),
-                label = { Text("Écrivez dans n'importe quelle langue") },
-                visualTransformation = if (grammarUpToDate && state.grammar.issues.isNotEmpty()) {
-                    ErrorHighlightTransformation(state.grammar.issues, errorColor)
-                } else {
-                    VisualTransformation.None
-                },
-                supportingText = { DetectedLanguageLabel(state.detectedLanguage, state.status) },
-                trailingIcon = {
-                    if (state.input.isNotEmpty()) {
-                        IconButton(onClick = vm::clear) {
-                            Icon(Icons.Default.Clear, contentDescription = "Effacer")
-                        }
+            Column(Modifier.padding(16.dp)) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        Languages.displayName(state.targetLanguage),
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    )
+                    if (state.status is Status.Translating || state.status is Status.DownloadingModel) {
+                        Spacer(Modifier.width(8.dp))
+                        CircularProgressIndicator(Modifier.size(14.dp), strokeWidth = 2.dp)
                     }
-                },
-            )
-
-            GrammarSection(
-                grammar = state.grammar,
-                upToDate = grammarUpToDate,
-                onApplyAll = vm::applyAllCorrections,
-                onApply = vm::applyCorrection,
-            )
-
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                ),
-            ) {
-                Column(Modifier.padding(16.dp)) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(
-                            Languages.displayName(state.targetLanguage),
-                            style = MaterialTheme.typography.labelLarge,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer,
-                        )
-                        if (state.status is Status.Translating || state.status is Status.DownloadingModel) {
-                            Spacer(Modifier.width(8.dp))
-                            CircularProgressIndicator(Modifier.size(14.dp), strokeWidth = 2.dp)
-                        }
-                        Spacer(Modifier.weight(1f))
-                        IconButton(
-                            onClick = { copyToClipboard(context, state.translation) },
-                            enabled = state.translation.isNotEmpty(),
-                        ) {
-                            Icon(Icons.Default.ContentCopy, contentDescription = "Copier")
-                        }
+                    Spacer(Modifier.weight(1f))
+                    IconButton(
+                        onClick = { copyToClipboard(context, state.translation) },
+                        enabled = state.translation.isNotEmpty(),
+                    ) {
+                        Icon(Icons.Default.ContentCopy, contentDescription = "Copier")
                     }
-                    SelectionContainer {
-                        Text(
-                            text = state.translation.ifEmpty { "La traduction apparaîtra ici…" },
-                            style = MaterialTheme.typography.headlineSmall,
-                            color = if (state.translation.isEmpty()) {
-                                MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.5f)
-                            } else {
-                                MaterialTheme.colorScheme.onPrimaryContainer
-                            },
-                            modifier = Modifier.heightIn(min = 120.dp),
-                        )
-                    }
+                }
+                SelectionContainer {
+                    Text(
+                        text = state.translation.ifEmpty { "La traduction apparaîtra ici…" },
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = if (state.translation.isEmpty()) {
+                            MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.5f)
+                        } else {
+                            MaterialTheme.colorScheme.onPrimaryContainer
+                        },
+                        modifier = Modifier.heightIn(min = 120.dp),
+                    )
                 }
             }
         }
@@ -203,7 +188,7 @@ private fun GrammarToggle(enabled: Boolean, onChange: (Boolean) -> Unit) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun TargetLanguagePicker(selected: String, onSelect: (String) -> Unit) {
+private fun TargetLanguagePicker(selected: String, nativeLanguage: String?, onSelect: (String) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
     ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { expanded = it }) {
         OutlinedTextField(
@@ -217,13 +202,12 @@ private fun TargetLanguagePicker(selected: String, onSelect: (String) -> Unit) {
                 .menuAnchor(MenuAnchorType.PrimaryNotEditable),
         )
         ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-            val native = Languages.nativeLanguage()
-            Languages.all.forEach { lang ->
-                val isNative = lang.code == native
+            Languages.all(nativeLanguage).forEach { lang ->
+                val isNative = lang.code == nativeLanguage
                 DropdownMenuItem(
                     text = {
                         Text(
-                            if (isNative) "${lang.displayName} (langue du téléphone)" else lang.displayName,
+                            if (isNative) "${lang.displayName} (ma langue)" else lang.displayName,
                             fontWeight = if (isNative) FontWeight.SemiBold else null,
                         )
                     },

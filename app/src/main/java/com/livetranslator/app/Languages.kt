@@ -7,20 +7,18 @@ import java.util.Locale
 data class Language(val code: String, val displayName: String)
 
 object Languages {
-    /**
-     * All languages supported by ML Kit translation, named in the device language:
-     * the user's native (device) language first, then the others in alphabetical order.
-     */
-    val all: List<Language> by lazy {
-        ordered(
-            TranslateLanguage.getAllLanguages().map { Language(it, displayName(it)) },
-            nativeLanguage(),
-            Locale.getDefault(),
-        )
+    private val allUnordered: List<Language> by lazy {
+        TranslateLanguage.getAllLanguages().map { Language(it, displayName(it)) }
     }
 
-    /** ML Kit code of the user's native language (the device language), if it is supported. */
-    fun nativeLanguage(): String? =
+    /**
+     * All languages supported by ML Kit translation, named in the device language:
+     * [nativeCode] (the user's native language) first, then the others in alphabetical order.
+     */
+    fun all(nativeCode: String?): List<Language> = ordered(allUnordered, nativeCode, Locale.getDefault())
+
+    /** ML Kit code of the device language, if it is supported. Used as default native language. */
+    fun deviceLanguage(): String? =
         TranslateLanguage.fromLanguageTag(Locale.getDefault().toLanguageTag().substringBefore('-'))
 
     /**
@@ -40,9 +38,7 @@ object Languages {
             .ifBlank { code }
     }
 
-    /** Default target: English, unless the device is already in English, then French. */
-    fun defaultTarget(): String {
-        val device = Locale.getDefault().language
-        return if (device == TranslateLanguage.ENGLISH) TranslateLanguage.FRENCH else TranslateLanguage.ENGLISH
-    }
+    /** Default target: English, unless the user's language is already English, then French. */
+    fun defaultTarget(nativeCode: String? = deviceLanguage()): String =
+        if (nativeCode == TranslateLanguage.ENGLISH) TranslateLanguage.FRENCH else TranslateLanguage.ENGLISH
 }

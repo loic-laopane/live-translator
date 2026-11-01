@@ -35,6 +35,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -45,6 +46,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -86,6 +88,14 @@ fun TranslatorScreen(vm: TranslatorViewModel = viewModel()) {
                 onSelect = vm::onTargetChange,
             )
 
+            GrammarToggle(
+                enabled = state.grammar.enabled,
+                onChange = vm::onGrammarEnabledChange,
+            )
+
+            val grammarUpToDate = state.grammar.checkedText == state.input
+            val errorColor = MaterialTheme.colorScheme.error
+
             OutlinedTextField(
                 value = state.input,
                 onValueChange = vm::onInputChange,
@@ -93,6 +103,11 @@ fun TranslatorScreen(vm: TranslatorViewModel = viewModel()) {
                     .fillMaxWidth()
                     .heightIn(min = 160.dp),
                 label = { Text("Écrivez dans n'importe quelle langue") },
+                visualTransformation = if (grammarUpToDate && state.grammar.issues.isNotEmpty()) {
+                    ErrorHighlightTransformation(state.grammar.issues, errorColor)
+                } else {
+                    VisualTransformation.None
+                },
                 supportingText = { DetectedLanguageLabel(state.detectedLanguage, state.status) },
                 trailingIcon = {
                     if (state.input.isNotEmpty()) {
@@ -101,6 +116,13 @@ fun TranslatorScreen(vm: TranslatorViewModel = viewModel()) {
                         }
                     }
                 },
+            )
+
+            GrammarSection(
+                grammar = state.grammar,
+                upToDate = grammarUpToDate,
+                onApplyAll = vm::applyAllCorrections,
+                onApply = vm::applyCorrection,
             )
 
             Card(
@@ -160,6 +182,21 @@ private fun DetectedLanguageLabel(detected: String?, status: Status) {
         text,
         color = if (status is Status.Error) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
     )
+}
+
+@Composable
+private fun GrammarToggle(enabled: Boolean, onChange: (Boolean) -> Unit) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Column(Modifier.weight(1f)) {
+            Text("Correction et règles de grammaire", style = MaterialTheme.typography.bodyLarge)
+            Text(
+                "Vérifié par LanguageTool (le texte est envoyé à leur service)",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+        Switch(checked = enabled, onCheckedChange = onChange)
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

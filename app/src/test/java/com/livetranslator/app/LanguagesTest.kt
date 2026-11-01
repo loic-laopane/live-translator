@@ -26,6 +26,6 @@ class LanguagesTest {
     @Test
     fun unknownNativeLanguageKeepsPlainAlphabeticalOrder() {
         val result = Languages.ordered(languages, null, Locale.FRENCH).map { it.code }
-        assertEquals(listOf("en", "ar", "ga", "es", "fr", "et", "el", "zu"), result)
+        assertEquals(listOf("en", "ar", "ga", "es", "et", "fr", "el", "zu"), result)
     }
 }

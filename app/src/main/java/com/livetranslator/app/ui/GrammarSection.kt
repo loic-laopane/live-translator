@@ -190,7 +190,8 @@ private fun IssueCard(issue: GrammarIssue, onApply: (GrammarIssue, String) -> Un
                     Icon(Icons.AutoMirrored.Filled.MenuBook, contentDescription = null, modifier = Modifier.size(16.dp))
                     Spacer(Modifier.width(6.dp))
                     Text(
-                        issue.ruleDescription.ifBlank { issue.shortMessage.ifBlank { "Règle" } },
+                        (issue.translatedRuleDescription ?: issue.ruleDescription)
+                            .ifBlank { issue.shortMessage.ifBlank { "Règle" } },
                         style = MaterialTheme.typography.labelLarge,
                     )
                 }
@@ -205,7 +206,7 @@ private fun IssueCard(issue: GrammarIssue, onApply: (GrammarIssue, String) -> Un
                 }
                 if (issue.category.isNotBlank()) {
                     Text(
-                        "Catégorie : ${issue.category}",
+                        "Catégorie : ${issue.translatedCategory ?: issue.category}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )

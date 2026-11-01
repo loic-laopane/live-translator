@@ -1,0 +1,161 @@
+{
+  "id": "anglais",
+  "name": "Anglais",
+  "translatable": false,
+  "lessons": [
+    {
+      "id": "en-present-perfect",
+      "title": "Present perfect ou prétérit ?",
+      "level": "seconde",
+      "summary": "Choisir entre « I did » et « I have done ».",
+      "sections": [
+        {
+          "title": "Le prétérit (simple past)",
+          "body": "Il exprime une action terminée, située à un moment précis du passé, coupé du présent.\n• I visited London in 2019.\nMots déclencheurs : yesterday, last week, in 2010, ago, when I was a child."
+        },
+        {
+          "title": "Le present perfect (have + participe passé)",
+          "body": "Il fait le lien entre le passé et le présent : bilan, expérience, conséquence actuelle.\n• I have visited London three times. (expérience, sans date)\n• She has lost her keys. (elle ne les a toujours pas)\nMots déclencheurs : ever, never, already, yet, just, so far."
+        },
+        {
+          "title": "since / for",
+          "body": "Pour une action commencée dans le passé et qui dure encore, l'anglais utilise le present perfect (et non le présent comme en français !).\n• I have lived here for ten years. (durée)\n• I have lived here since 2015. (point de départ)\nPiège : « J'habite ici depuis 10 ans » ≠ « I live here for 10 years »."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "« I … to Spain last summer. »",
+          "options": [
+            "have gone",
+            "went",
+            "have been",
+            "go"
+          ],
+          "answer": 1,
+          "explanation": "« last summer » date l'action dans un passé terminé : prétérit."
+        },
+        {
+          "question": "« … you ever … sushi? »",
+          "options": [
+            "Did / eat",
+            "Have / eaten",
+            "Do / eat",
+            "Has / ate"
+          ],
+          "answer": 1,
+          "explanation": "« ever » interroge sur l'expérience : present perfect."
+        },
+        {
+          "question": "« She has worked here … 2018. »",
+          "options": [
+            "for",
+            "since",
+            "ago",
+            "during"
+          ],
+          "answer": 1,
+          "explanation": "2018 est un point de départ : « since »."
+        },
+        {
+          "question": "« We … each other for five years. »",
+          "options": [
+            "know",
+            "knew",
+            "have known",
+            "are knowing"
+          ],
+          "answer": 2,
+          "explanation": "Action qui dure encore aujourd'hui avec « for » : present perfect."
+        },
+        {
+          "question": "« I saw him two days … »",
+          "options": [
+            "since",
+            "for",
+            "ago",
+            "yet"
+          ],
+          "answer": 2,
+          "explanation": "« ago » s'emploie avec le prétérit pour dater une action passée."
+        }
+      ]
+    },
+    {
+      "id": "en-conditionals",
+      "title": "Les phrases conditionnelles (if)",
+      "level": "premiere",
+      "summary": "Les trois types de conditionnelles et leurs temps.",
+      "sections": [
+        {
+          "title": "Type 0 et type 1 : réel",
+          "body": "• Type 0 (vérité générale) : If + présent, présent. If you heat ice, it melts.\n• Type 1 (possible dans le futur) : If + présent, will + base verbale. If it rains, I will stay home.\nPiège : jamais de « will » après « if » ! ✗ If it will rain…"
+        },
+        {
+          "title": "Type 2 : hypothèse irréelle au présent",
+          "body": "If + prétérit, would + base verbale.\n• If I had money, I would travel.\nAvec « be », on peut utiliser « were » à toutes les personnes : If I were you, I would accept."
+        },
+        {
+          "title": "Type 3 : regret, passé irréel",
+          "body": "If + past perfect (had + participe passé), would have + participe passé.\n• If I had studied, I would have passed the exam. (mais je n'ai pas révisé)"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "« If it … tomorrow, we will cancel the trip. »",
+          "options": [
+            "will rain",
+            "rains",
+            "rained",
+            "would rain"
+          ],
+          "answer": 1,
+          "explanation": "Type 1 : If + présent, will + verbe. Pas de « will » après « if »."
+        },
+        {
+          "question": "« If I … rich, I would buy a boat. »",
+          "options": [
+            "am",
+            "will be",
+            "were",
+            "have been"
+          ],
+          "answer": 2,
+          "explanation": "Type 2 (irréel du présent) : If + prétérit ; « were » à toutes les personnes."
+        },
+        {
+          "question": "« If she had called me, I … her. »",
+          "options": [
+            "would help",
+            "will help",
+            "would have helped",
+            "helped"
+          ],
+          "answer": 2,
+          "explanation": "Type 3 : If + past perfect, would have + participe passé."
+        },
+        {
+          "question": "« If you mix blue and yellow, you … green. »",
+          "options": [
+            "get",
+            "will got",
+            "would get",
+            "got"
+          ],
+          "answer": 0,
+          "explanation": "Vérité générale : type 0, présent dans les deux propositions."
+        },
+        {
+          "question": "« If I were you, I … that. »",
+          "options": [
+            "won't do",
+            "wouldn't do",
+            "don't do",
+            "didn't do"
+          ],
+          "answer": 1,
+          "explanation": "Conseil avec « If I were you » : type 2, would + base verbale."
+        }
+      ]
+    }
+  ]
+}

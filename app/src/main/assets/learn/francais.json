@@ -1,0 +1,238 @@
+{
+  "id": "francais",
+  "name": "Français",
+  "translatable": false,
+  "lessons": [
+    {
+      "id": "fr-participe-passe",
+      "title": "L'accord du participe passé",
+      "level": "seconde",
+      "summary": "Savoir quand et avec quoi accorder le participe passé.",
+      "sections": [
+        {
+          "title": "Employé seul ou avec « être »",
+          "body": "Employé sans auxiliaire, le participe passé s'accorde comme un adjectif avec le nom auquel il se rapporte.\n• Des feuilles tombées.\n\nAvec l'auxiliaire « être », il s'accorde en genre et en nombre avec le sujet.\n• Elles sont parties tôt.\n• Les lettres ont été envoyées."
+        },
+        {
+          "title": "Avec l'auxiliaire « avoir »",
+          "body": "Avec « avoir », le participe passé ne s'accorde JAMAIS avec le sujet.\nIl s'accorde avec le complément d'objet direct (COD) seulement si ce COD est placé AVANT le verbe.\n• J'ai mangé les pommes. (COD après : pas d'accord)\n• Les pommes que j'ai mangées. (« que » = les pommes, placé avant : accord)\n• Ces pommes, je les ai mangées.\n\nAstuce : posez la question « quoi ? » après le verbe et regardez où se trouve la réponse."
+        },
+        {
+          "title": "Pièges fréquents",
+          "body": "• Avec « en », pas d'accord : Des pommes, j'en ai mangé.\n• Le participe passé de « fait » suivi d'un infinitif est invariable : Elle s'est fait couper les cheveux.\n• Les verbes pronominaux s'accordent en général avec le sujet (Elles se sont levées), sauf si le pronom est COI ou si un COD suit : Elles se sont lavé les mains."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Choisissez la bonne orthographe : « Les fleurs que j'ai … »",
+          "options": [
+            "cueilli",
+            "cueillies",
+            "cueillis",
+            "cueillie"
+          ],
+          "answer": 1,
+          "explanation": "Le COD « que » (= les fleurs, féminin pluriel) est placé avant le verbe : on accorde."
+        },
+        {
+          "question": "« Elles ont … toute la nuit. »",
+          "options": [
+            "dansé",
+            "dansées",
+            "dansés",
+            "dansée"
+          ],
+          "answer": 0,
+          "explanation": "Avec « avoir », pas d'accord avec le sujet, et il n'y a pas de COD : participe invariable."
+        },
+        {
+          "question": "« Ma sœur est … hier soir. »",
+          "options": [
+            "arrivé",
+            "arrivés",
+            "arrivée",
+            "arrivées"
+          ],
+          "answer": 2,
+          "explanation": "Avec « être », accord avec le sujet « ma sœur » (féminin singulier)."
+        },
+        {
+          "question": "« Des gâteaux, j'en ai … trois. »",
+          "options": [
+            "mangés",
+            "mangé",
+            "mangées",
+            "mangée"
+          ],
+          "answer": 1,
+          "explanation": "Avec le pronom « en », le participe passé reste invariable."
+        },
+        {
+          "question": "« Elles se sont … les mains. »",
+          "options": [
+            "lavées",
+            "lavés",
+            "lavé",
+            "lavée"
+          ],
+          "answer": 2,
+          "explanation": "Le COD « les mains » est placé après le verbe : pas d'accord (« se » est ici COI)."
+        }
+      ]
+    },
+    {
+      "id": "fr-homophones",
+      "title": "Les homophones grammaticaux",
+      "level": "seconde",
+      "summary": "a/à, ou/où, ces/ses/c'est/s'est, quel(le)/qu'elle : ne plus confondre.",
+      "sections": [
+        {
+          "title": "a / à",
+          "body": "• « a » est le verbe avoir : on peut le remplacer par « avait ». Il a faim → il avait faim.\n• « à » est une préposition : le remplacement par « avait » est impossible. Il va à Paris."
+        },
+        {
+          "title": "ou / où",
+          "body": "• « ou » (sans accent) marque un choix : on peut le remplacer par « ou bien ». Thé ou café ?\n• « où » (avec accent) indique le lieu ou le temps. La ville où je suis né. Le jour où il est venu."
+        },
+        {
+          "title": "ces / ses / c'est / s'est",
+          "body": "• « ces » : démonstratif, pluriel de « ce/cet/cette ». Ces livres-là.\n• « ses » : possessif, pluriel de « son/sa » (les siens). Il range ses livres.\n• « c'est » = « cela est ». C'est facile.\n• « s'est » : pronom « se » + auxiliaire être, devant un participe passé. Il s'est trompé."
+        },
+        {
+          "title": "quel(le)(s) / qu'elle(s)",
+          "body": "• « quel » s'accorde avec le nom qu'il accompagne. Quelle belle journée !\n• « qu'elle » = « que + elle » : on peut remplacer par « qu'il ». Je crois qu'elle viendra → je crois qu'il viendra."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "« Il … oublié son sac. »",
+          "options": [
+            "a",
+            "à"
+          ],
+          "answer": 0,
+          "explanation": "On peut dire « il avait oublié » : c'est le verbe avoir."
+        },
+        {
+          "question": "« Je ne sais pas … il habite. »",
+          "options": [
+            "ou",
+            "où"
+          ],
+          "answer": 1,
+          "explanation": "Il s'agit d'un lieu : « où » prend un accent."
+        },
+        {
+          "question": "« Elle a perdu … clés. » (les siennes)",
+          "options": [
+            "ces",
+            "ses",
+            "c'est",
+            "s'est"
+          ],
+          "answer": 1,
+          "explanation": "Ce sont ses clés à elle : possessif « ses »."
+        },
+        {
+          "question": "« Il … blessé en tombant. »",
+          "options": [
+            "c'est",
+            "s'est",
+            "ses",
+            "ces"
+          ],
+          "answer": 1,
+          "explanation": "Devant le participe passé « blessé », on a le pronom « se » + être : « s'est »."
+        },
+        {
+          "question": "« … chance tu as ! »",
+          "options": [
+            "Qu'elle",
+            "Quelle",
+            "Quel",
+            "Qu'elles"
+          ],
+          "answer": 1,
+          "explanation": "« Quelle » s'accorde avec « chance » (féminin singulier) ; on ne peut pas dire « qu'il chance »."
+        }
+      ]
+    },
+    {
+      "id": "fr-figures-style",
+      "title": "Les figures de style",
+      "level": "premiere",
+      "summary": "Reconnaître et nommer les principales figures de style.",
+      "sections": [
+        {
+          "title": "Figures d'analogie",
+          "body": "• Comparaison : rapproche deux éléments avec un outil de comparaison (comme, tel, pareil à…). « Il est fort comme un lion. »\n• Métaphore : même rapprochement, mais SANS outil de comparaison. « Cet homme est un lion. »\n• Personnification : attribue des caractéristiques humaines à un objet, un animal ou une idée. « La ville s'éveille. »"
+        },
+        {
+          "title": "Figures d'amplification et d'atténuation",
+          "body": "• Hyperbole : exagération. « Je te l'ai dit mille fois. »\n• Litote : dire moins pour suggérer plus. « Va, je ne te hais point. » (Corneille) = je t'aime.\n• Euphémisme : atténuer une réalité pénible. « Il nous a quittés. » = il est mort."
+        },
+        {
+          "title": "Figures d'opposition et de répétition",
+          "body": "• Antithèse : oppose deux termes dans une même phrase. « Je vis, je meurs. »\n• Oxymore : associe deux termes contradictoires étroitement liés. « Cette obscure clarté » (Corneille).\n• Anaphore : répétition d'un même mot ou groupe en début de vers ou de phrase. « Rome, l'unique objet de mon ressentiment ! / Rome… »"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "« Ses yeux sont des étoiles. »",
+          "options": [
+            "Comparaison",
+            "Métaphore",
+            "Hyperbole",
+            "Litote"
+          ],
+          "answer": 1,
+          "explanation": "Rapprochement sans outil de comparaison : c'est une métaphore."
+        },
+        {
+          "question": "« Je meurs de faim. »",
+          "options": [
+            "Euphémisme",
+            "Litote",
+            "Hyperbole",
+            "Oxymore"
+          ],
+          "answer": 2,
+          "explanation": "On exagère la réalité : hyperbole."
+        },
+        {
+          "question": "« Un silence assourdissant »",
+          "options": [
+            "Oxymore",
+            "Antithèse",
+            "Anaphore",
+            "Personnification"
+          ],
+          "answer": 0,
+          "explanation": "Deux termes contradictoires sont directement associés : oxymore."
+        },
+        {
+          "question": "« Ce n'est pas mauvais » pour dire « c'est très bon »",
+          "options": [
+            "Euphémisme",
+            "Litote",
+            "Métaphore",
+            "Hyperbole"
+          ],
+          "answer": 1,
+          "explanation": "Dire moins pour suggérer plus : litote."
+        },
+        {
+          "question": "« Le vent hurlait sa colère. »",
+          "options": [
+            "Comparaison",
+            "Personnification",
+            "Oxymore",
+            "Anaphore"
+          ],
+          "answer": 1,
+          "explanation": "Le vent reçoit des sentiments et un comportement humains : personnification."
+        }
+      ]
+    }
+  ]
+}

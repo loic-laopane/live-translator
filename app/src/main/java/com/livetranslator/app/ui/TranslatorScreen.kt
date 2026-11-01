@@ -29,6 +29,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -46,6 +47,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -215,14 +217,22 @@ private fun TargetLanguagePicker(selected: String, onSelect: (String) -> Unit) {
                 .menuAnchor(MenuAnchorType.PrimaryNotEditable),
         )
         ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            val native = Languages.nativeLanguage()
             Languages.all.forEach { lang ->
+                val isNative = lang.code == native
                 DropdownMenuItem(
-                    text = { Text(lang.displayName) },
+                    text = {
+                        Text(
+                            if (isNative) "${lang.displayName} (langue du téléphone)" else lang.displayName,
+                            fontWeight = if (isNative) FontWeight.SemiBold else null,
+                        )
+                    },
                     onClick = {
                         onSelect(lang.code)
                         expanded = false
                     },
                 )
+                if (isNative) HorizontalDivider()
             }
         }
     }

@@ -1,0 +1,280 @@
+{
+  "id": "espagnol",
+  "name": "Espagnol",
+  "language": "es",
+  "lessons": [
+    {
+      "id": "es-ser-estar",
+      "title": "Ser ou estar ?",
+      "level": "a1",
+      "summary": "Deux verbes pour dire « être ».",
+      "sections": [
+        {
+          "title": "Ser : l'identité",
+          "body": "On utilise « ser » pour ce qui définit : identité, nationalité, profession, caractère, matière, heure, date, et le lieu d'un événement.\nsoy, eres, es, somos, sois, son.",
+          "examples": [
+            {
+              "text": "Soy francés.",
+              "translation": "Je suis français."
+            },
+            {
+              "text": "Ella es médica.",
+              "translation": "Elle est médecin."
+            },
+            {
+              "text": "Son las tres.",
+              "translation": "Il est trois heures."
+            },
+            {
+              "text": "La fiesta es en mi casa.",
+              "translation": "La fête a lieu chez moi."
+            }
+          ]
+        },
+        {
+          "title": "Estar : l'état et le lieu",
+          "body": "On utilise « estar » pour un état passager, une émotion, la localisation (d'une personne ou d'un objet) et avec le gérondif.\nestoy, estás, está, estamos, estáis, están.",
+          "examples": [
+            {
+              "text": "Estoy cansado.",
+              "translation": "Je suis fatigué."
+            },
+            {
+              "text": "Madrid está en España.",
+              "translation": "Madrid est en Espagne."
+            },
+            {
+              "text": "Está lloviendo.",
+              "translation": "Il est en train de pleuvoir."
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "Yo ___ estudiante.",
+          "options": [
+            "soy",
+            "estoy"
+          ],
+          "answer": 0,
+          "explanation": "La profession / l'identité : ser."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "Hoy ___ muy cansada.",
+          "options": [
+            "soy",
+            "estoy"
+          ],
+          "answer": 1,
+          "explanation": "État passager : estar."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "¿Dónde ___ el baño?",
+          "options": [
+            "es",
+            "está"
+          ],
+          "answer": 1,
+          "explanation": "Localisation d'un objet : estar."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "El concierto ___ en el estadio.",
+          "options": [
+            "es",
+            "está"
+          ],
+          "answer": 0,
+          "explanation": "Lieu d'un ÉVÉNEMENT : ser (piège classique)."
+        },
+        {
+          "type": "input",
+          "prompt": "Traduisez : « Nous sommes espagnols. »",
+          "text": "",
+          "answers": [
+            "Somos españoles",
+            "Nosotros somos españoles"
+          ],
+          "explanation": "Nationalité : ser → somos."
+        }
+      ]
+    },
+    {
+      "id": "es-gustar",
+      "title": "Exprimer ses goûts : gustar",
+      "level": "a1",
+      "summary": "Me gusta, me gustan : le verbe s'accorde avec ce qui plaît.",
+      "sections": [
+        {
+          "title": "Construction",
+          "body": "« gustar » se construit comme « plaire » : la chose aimée est le sujet. Le pronom indique la personne : me, te, le, nos, os, les.\n• gusta + nom singulier ou infinitif\n• gustan + nom pluriel",
+          "examples": [
+            {
+              "text": "Me gusta el chocolate.",
+              "translation": "J'aime le chocolat."
+            },
+            {
+              "text": "Me gustan los perros.",
+              "translation": "J'aime les chiens."
+            },
+            {
+              "text": "Nos gusta bailar.",
+              "translation": "Nous aimons danser."
+            },
+            {
+              "text": "¿Te gusta el fútbol?",
+              "translation": "Tu aimes le football ?"
+            }
+          ]
+        },
+        {
+          "title": "Insister et nuancer",
+          "body": "Pour insister ou préciser : a mí, a ti, a él… Pour nuancer : mucho (beaucoup), no… nada (pas du tout).",
+          "examples": [
+            {
+              "text": "A mí me gusta, pero a él no.",
+              "translation": "Moi j'aime, mais pas lui."
+            },
+            {
+              "text": "No me gusta nada.",
+              "translation": "Je n'aime pas du tout."
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "Me ___ las manzanas.",
+          "options": [
+            "gusta",
+            "gustan"
+          ],
+          "answer": 1,
+          "explanation": "« las manzanas » est pluriel : gustan."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "¿Te ___ leer?",
+          "options": [
+            "gusta",
+            "gustan"
+          ],
+          "answer": 0,
+          "explanation": "Avec un infinitif : gusta."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "___ gusta la música. (à nous)",
+          "options": [
+            "Me",
+            "Nos",
+            "Les"
+          ],
+          "answer": 1,
+          "explanation": "« nous » → nos."
+        },
+        {
+          "type": "input",
+          "prompt": "Traduisez : « J'aime les chats. » (los gatos)",
+          "text": "",
+          "answers": [
+            "Me gustan los gatos",
+            "A mí me gustan los gatos"
+          ],
+          "explanation": "Pluriel : me gustan."
+        }
+      ]
+    },
+    {
+      "id": "es-preterito",
+      "title": "Le passé simple (pretérito indefinido)",
+      "level": "a2",
+      "summary": "Raconter une action passée et terminée.",
+      "sections": [
+        {
+          "title": "Verbes réguliers",
+          "body": "• -ar (hablar) : hablé, hablaste, habló, hablamos, hablasteis, hablaron\n• -er (comer) : comí, comiste, comió, comimos, comisteis, comieron\n• -ir (vivir) : viví, viviste, vivió, vivimos, vivisteis, vivieron\nAttention aux accents : hablo (je parle) ≠ habló (il a parlé).",
+          "examples": [
+            {
+              "text": "Ayer hablé con mi madre.",
+              "translation": "Hier, j'ai parlé avec ma mère."
+            },
+            {
+              "text": "Comimos en un restaurante.",
+              "translation": "Nous avons mangé au restaurant."
+            }
+          ]
+        },
+        {
+          "title": "Quand l'utiliser",
+          "body": "Pour une action ponctuelle et terminée, souvent avec ayer, el año pasado, la semana pasada, en 2010.",
+          "examples": [
+            {
+              "text": "El año pasado viajé a México.",
+              "translation": "L'année dernière, j'ai voyagé au Mexique."
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "Ayer yo ___ (hablar) con Ana.",
+          "options": [
+            "hablo",
+            "hablé",
+            "habló"
+          ],
+          "answer": 1,
+          "explanation": "1re personne du singulier : hablé."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "Ellos ___ (comer) paella.",
+          "options": [
+            "comieron",
+            "comimos",
+            "comió"
+          ],
+          "answer": 0,
+          "explanation": "3e personne du pluriel : comieron."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "Tú ___ (vivir) en Madrid.",
+          "options": [
+            "viviste",
+            "vivió",
+            "viví"
+          ],
+          "answer": 0,
+          "explanation": "2e personne du singulier : viviste."
+        },
+        {
+          "type": "input",
+          "prompt": "Conjuguez au pretérito :",
+          "text": "Nosotros (trabajar) mucho ayer.",
+          "answers": [
+            "trabajamos"
+          ],
+          "explanation": "-ar, « nosotros » : trabajamos."
+        }
+      ]
+    }
+  ]
+}

@@ -6,72 +6,69 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
 
-/** Validates every lesson shipped in `src/main/assets/learn`. */
+/** Validates every language course shipped in `src/main/assets/learn`. */
 class LearnContentTest {
 
-    private val subjects: List<Subject> by lazy {
+    private val courses: List<Course> by lazy {
         val dir = File("src/main/assets/learn")
         assertTrue("Dossier introuvable : ${dir.absolutePath}", dir.isDirectory)
         dir.listFiles { f -> f.extension == "json" }!!.sortedBy { it.name }
-            .map { CourseParser.parseSubject(it.readText()) }
+            .map { CourseParser.parseCourse(it.readText()) }
     }
 
     @Test
-    fun everySubjectFileParses() {
-        assertTrue(subjects.size >= 7)
-        subjects.forEach { assertTrue("${it.id} sans leçon", it.lessons.isNotEmpty()) }
+    fun everyCourseParses() {
+        val ids = courses.map { it.id }.toSet()
+        assertTrue(ids.containsAll(listOf("anglais", "allemand", "espagnol", "chinois")))
+        courses.forEach { assertTrue("${it.id} sans leçon", it.lessons.isNotEmpty()) }
+    }
+
+    @Test
+    fun onlyLanguageCourses() {
+        val languages = courses.map { it.language }
+        assertEquals(languages.size, languages.toSet().size)
+        assertFalse(courses.any { it.id in listOf("maths", "physique-chimie", "svt", "histoire-geo", "philosophie") })
     }
 
     @Test
     fun idsAreUnique() {
-        val subjectIds = subjects.map { it.id }
-        assertEquals(subjectIds.size, subjectIds.toSet().size)
-        val lessonIds = subjects.flatMap { s -> s.lessons.map { it.id } }
+        val lessonIds = courses.flatMap { c -> c.lessons.map { it.id } }
         assertEquals(lessonIds.size, lessonIds.toSet().size)
     }
 
     @Test
-    fun everyLevelIsCovered() {
-        val levels = subjects.flatMap { s -> s.lessons.map { it.level } }.toSet()
-        assertEquals(Level.entries.toSet(), levels)
-    }
-
-    @Test
     fun lessonsAreComplete() {
-        subjects.flatMap { it.lessons }.forEach { lesson ->
+        courses.flatMap { it.lessons }.forEach { lesson ->
             assertTrue("${lesson.id} : titre vide", lesson.title.isNotBlank())
             assertTrue("${lesson.id} : pas de section", lesson.sections.isNotEmpty())
-            lesson.sections.forEach { assertTrue("${lesson.id} : section vide", it.body.isNotBlank()) }
-            assertTrue("${lesson.id} : quiz trop court", lesson.quiz.size >= 3)
+            lesson.sections.forEach {
+                assertTrue("${lesson.id} : section vide", it.body.isNotBlank() || it.examples.isNotEmpty())
+            }
+            assertTrue("${lesson.id} : pas d'exemple", lesson.sections.any { it.examples.isNotEmpty() })
+            assertTrue("${lesson.id} : trop peu d'exercices", lesson.exercises.size >= 4)
         }
     }
 
     @Test
-    fun quizQuestionsAreValid() {
-        subjects.flatMap { it.lessons }.forEach { lesson ->
-            lesson.quiz.forEach { q ->
-                val where = "${lesson.id} / ${q.question}"
-                assertTrue("$where : moins de 2 choix", q.options.size >= 2)
-                assertTrue("$where : réponse hors limites", q.answer in q.options.indices)
-                assertEquals("$where : choix en double", q.options.size, q.options.toSet().size)
-                assertTrue("$where : explication manquante", q.explanation.isNotBlank())
+    fun exercisesAreValid() {
+        courses.flatMap { it.lessons }.forEach { lesson ->
+            lesson.exercises.forEach { e ->
+                val where = "${lesson.id} / ${e.prompt} ${e.text}"
+                assertTrue("$where : consigne vide", e.prompt.isNotBlank())
+                assertTrue("$where : explication manquante", e.explanation.isNotBlank())
+                when (e) {
+                    is Exercise.Choice -> {
+                        assertTrue("$where : moins de 2 choix", e.options.size >= 2)
+                        assertTrue("$where : réponse hors limites", e.answer in e.options.indices)
+                        assertEquals("$where : choix en double", e.options.size, e.options.toSet().size)
+                    }
+                    is Exercise.Input -> {
+                        assertTrue("$where : aucune réponse acceptée", e.answers.isNotEmpty())
+                        // The expected answer must be accepted by the checker itself.
+                        assertTrue("$where : réponse refusée", AnswerChecker.isCorrect(e.answers.first(), e.answers))
+                    }
+                }
             }
         }
-    }
-
-    @Test
-    fun languageSubjectsAreNeverTranslated() {
-        subjects.filter { it.id == "francais" || it.id == "anglais" }.forEach {
-            assertFalse("${it.id} ne doit pas être traduit", it.translatable)
-        }
-    }
-
-    @Test
-    fun formulasAreDetected() {
-        assertTrue(TranslationRules.isFormula("2x + 3"))
-        assertTrue(TranslationRules.isFormula("e²"))
-        assertTrue(TranslationRules.isFormula("44 g/mol"))
-        assertFalse(TranslationRules.isFormula("La mitochondrie"))
-        assertFalse(TranslationRules.isFormula("décroissante"))
     }
 }

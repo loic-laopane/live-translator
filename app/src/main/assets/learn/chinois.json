@@ -1,0 +1,384 @@
+{
+  "id": "chinois",
+  "name": "Chinois (mandarin)",
+  "language": "zh",
+  "lessons": [
+    {
+      "id": "zh-tons",
+      "title": "Les tons et le pinyin",
+      "level": "a1",
+      "summary": "Le mandarin a 4 tons + un ton neutre : ils changent le sens du mot.",
+      "sections": [
+        {
+          "title": "Les quatre tons",
+          "body": "Le pinyin note la prononciation avec l'alphabet latin ; l'accent indique le ton.\n• 1er ton (ā) : haut et plat.\n• 2e ton (á) : montant, comme une question en français.\n• 3e ton (ǎ) : descend puis remonte.\n• 4e ton (à) : descendant, sec.\n• Ton neutre (a) : court et léger.",
+          "examples": [
+            {
+              "text": "妈",
+              "translation": "mère (1er ton)",
+              "pronunciation": "mā"
+            },
+            {
+              "text": "麻",
+              "translation": "chanvre (2e ton)",
+              "pronunciation": "má"
+            },
+            {
+              "text": "马",
+              "translation": "cheval (3e ton)",
+              "pronunciation": "mǎ"
+            },
+            {
+              "text": "骂",
+              "translation": "gronder (4e ton)",
+              "pronunciation": "mà"
+            },
+            {
+              "text": "吗",
+              "translation": "particule interrogative (ton neutre)",
+              "pronunciation": "ma"
+            }
+          ]
+        },
+        {
+          "title": "Changements de ton",
+          "body": "• Deux 3e tons qui se suivent : le premier se prononce au 2e ton (nǐ hǎo se dit ní hǎo).\n• 不 (bù, « ne… pas ») devient bú devant un 4e ton.",
+          "examples": [
+            {
+              "text": "你好",
+              "translation": "bonjour",
+              "pronunciation": "nǐ hǎo"
+            },
+            {
+              "text": "不是",
+              "translation": "ne pas être",
+              "pronunciation": "bú shì"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Quel ton est montant ?",
+          "text": "",
+          "options": [
+            "1er ton",
+            "2e ton",
+            "3e ton",
+            "4e ton"
+          ],
+          "answer": 1,
+          "explanation": "Le 2e ton monte, comme une intonation de question.",
+          "translateOptions": true
+        },
+        {
+          "type": "choice",
+          "prompt": "Que signifie :",
+          "text": "马",
+          "options": [
+            "mère",
+            "cheval",
+            "gronder",
+            "chanvre"
+          ],
+          "answer": 1,
+          "explanation": "马 (mǎ, 3e ton) signifie cheval.",
+          "translateOptions": true,
+          "pronunciation": "mǎ"
+        },
+        {
+          "type": "choice",
+          "prompt": "Que signifie :",
+          "text": "妈",
+          "options": [
+            "mère",
+            "cheval",
+            "gronder",
+            "chanvre"
+          ],
+          "answer": 0,
+          "explanation": "妈 (mā, 1er ton) signifie mère.",
+          "translateOptions": true,
+          "pronunciation": "mā"
+        },
+        {
+          "type": "choice",
+          "prompt": "Comment se prononce réellement 你好 (nǐ hǎo) ?",
+          "text": "你好",
+          "options": [
+            "nǐ hǎo",
+            "ní hǎo",
+            "nì hào"
+          ],
+          "answer": 1,
+          "explanation": "Deux 3e tons de suite : le premier passe au 2e ton."
+        },
+        {
+          "type": "choice",
+          "prompt": "Comment se prononce 不 devant 是 (shì, 4e ton) ?",
+          "text": "不是",
+          "options": [
+            "bù shì",
+            "bú shì",
+            "bǔ shì"
+          ],
+          "answer": 1,
+          "explanation": "不 devient bú devant un 4e ton."
+        }
+      ]
+    },
+    {
+      "id": "zh-presentations",
+      "title": "Se présenter",
+      "level": "a1",
+      "summary": "Saluer, dire son nom, sa nationalité, poser une question avec 吗.",
+      "sections": [
+        {
+          "title": "Saluer et remercier",
+          "body": "",
+          "examples": [
+            {
+              "text": "你好！",
+              "translation": "Bonjour !",
+              "pronunciation": "nǐ hǎo"
+            },
+            {
+              "text": "谢谢。",
+              "translation": "Merci.",
+              "pronunciation": "xièxie"
+            },
+            {
+              "text": "不客气。",
+              "translation": "De rien.",
+              "pronunciation": "bú kèqi"
+            },
+            {
+              "text": "再见！",
+              "translation": "Au revoir !",
+              "pronunciation": "zàijiàn"
+            }
+          ]
+        },
+        {
+          "title": "Dire son nom et sa nationalité",
+          "body": "• 叫 (jiào) : s'appeler. • 是 (shì) : être. • 人 (rén) : personne ; pays + 人 = nationalité.\nLe verbe ne se conjugue pas : 我是 (je suis), 你是 (tu es), 他是 (il est).",
+          "examples": [
+            {
+              "text": "我叫玛丽。",
+              "translation": "Je m'appelle Marie.",
+              "pronunciation": "wǒ jiào Mǎlì"
+            },
+            {
+              "text": "我是法国人。",
+              "translation": "Je suis français(e).",
+              "pronunciation": "wǒ shì Fǎguó rén"
+            },
+            {
+              "text": "你叫什么名字？",
+              "translation": "Comment t'appelles-tu ?",
+              "pronunciation": "nǐ jiào shénme míngzi"
+            }
+          ]
+        },
+        {
+          "title": "Poser une question avec 吗",
+          "body": "On ajoute 吗 (ma) à la fin d'une phrase affirmative pour en faire une question fermée (oui/non). L'ordre des mots ne change pas.",
+          "examples": [
+            {
+              "text": "你是学生吗？",
+              "translation": "Es-tu étudiant ?",
+              "pronunciation": "nǐ shì xuésheng ma"
+            },
+            {
+              "text": "我不是老师。",
+              "translation": "Je ne suis pas professeur.",
+              "pronunciation": "wǒ bú shì lǎoshī"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Que signifie :",
+          "text": "谢谢",
+          "options": [
+            "Bonjour",
+            "Merci",
+            "Au revoir",
+            "Pardon"
+          ],
+          "answer": 1,
+          "explanation": "谢谢 (xièxie) = merci.",
+          "translateOptions": true,
+          "pronunciation": "xièxie"
+        },
+        {
+          "type": "choice",
+          "prompt": "Que signifie :",
+          "text": "再见",
+          "options": [
+            "Au revoir",
+            "De rien",
+            "Bonjour",
+            "Merci"
+          ],
+          "answer": 0,
+          "explanation": "再见 (zàijiàn) = au revoir.",
+          "translateOptions": true,
+          "pronunciation": "zàijiàn"
+        },
+        {
+          "type": "choice",
+          "prompt": "Comment dit-on « Je suis français » ?",
+          "text": "",
+          "options": [
+            "我叫法国。",
+            "我是法国人。",
+            "我法国人是。"
+          ],
+          "answer": 1,
+          "explanation": "Sujet + 是 + pays + 人."
+        },
+        {
+          "type": "choice",
+          "prompt": "Comment transformer 你是老师 en question ?",
+          "text": "",
+          "options": [
+            "你是老师吗？",
+            "吗你是老师？",
+            "你吗是老师？"
+          ],
+          "answer": 0,
+          "explanation": "On ajoute simplement 吗 à la fin."
+        },
+        {
+          "type": "input",
+          "prompt": "Écrivez « bonjour » en pinyin (avec ou sans accents)",
+          "text": "你好",
+          "answers": [
+            "ni hao",
+            "nǐ hǎo",
+            "nihao",
+            "nǐhǎo",
+            "你好"
+          ],
+          "explanation": "你好 se lit nǐ hǎo."
+        }
+      ]
+    },
+    {
+      "id": "zh-classificateurs",
+      "title": "Les classificateurs",
+      "level": "a2",
+      "summary": "Nombre + classificateur + nom : 一本书, 两只猫…",
+      "sections": [
+        {
+          "title": "Le principe",
+          "body": "En chinois, on ne peut pas mettre un nombre directement devant un nom : il faut un classificateur entre les deux.\nPour « deux » devant un classificateur, on utilise 两 (liǎng) et non 二 (èr).",
+          "examples": [
+            {
+              "text": "一个人",
+              "translation": "une personne",
+              "pronunciation": "yí gè rén"
+            },
+            {
+              "text": "两个朋友",
+              "translation": "deux amis",
+              "pronunciation": "liǎng gè péngyou"
+            }
+          ]
+        },
+        {
+          "title": "Les plus courants",
+          "body": "• 个 (gè) : le plus général, personnes et objets variés.\n• 本 (běn) : livres, cahiers.\n• 只 (zhī) : la plupart des animaux.\n• 杯 (bēi) : une tasse, un verre de…\n• 张 (zhāng) : objets plats (papier, table, billet).",
+          "examples": [
+            {
+              "text": "一本书",
+              "translation": "un livre",
+              "pronunciation": "yì běn shū"
+            },
+            {
+              "text": "三只猫",
+              "translation": "trois chats",
+              "pronunciation": "sān zhī māo"
+            },
+            {
+              "text": "一杯茶",
+              "translation": "une tasse de thé",
+              "pronunciation": "yì bēi chá"
+            },
+            {
+              "text": "一张纸",
+              "translation": "une feuille de papier",
+              "pronunciation": "yì zhāng zhǐ"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Quel classificateur pour un livre (书) ?",
+          "text": "一___书",
+          "options": [
+            "只",
+            "本",
+            "杯",
+            "张"
+          ],
+          "answer": 1,
+          "explanation": "本 (běn) s'emploie pour les livres."
+        },
+        {
+          "type": "choice",
+          "prompt": "Quel classificateur pour un chat (猫) ?",
+          "text": "两___猫",
+          "options": [
+            "只",
+            "本",
+            "杯",
+            "张"
+          ],
+          "answer": 0,
+          "explanation": "只 (zhī) s'emploie pour les animaux."
+        },
+        {
+          "type": "choice",
+          "prompt": "« Deux personnes » se dit :",
+          "text": "",
+          "options": [
+            "二个人",
+            "两个人",
+            "两人个"
+          ],
+          "answer": 1,
+          "explanation": "On utilise 两 devant un classificateur."
+        },
+        {
+          "type": "choice",
+          "prompt": "Quel classificateur pour « une tasse de café » ?",
+          "text": "一___咖啡",
+          "options": [
+            "个",
+            "本",
+            "杯",
+            "只"
+          ],
+          "answer": 2,
+          "explanation": "杯 (bēi) : une tasse / un verre de."
+        },
+        {
+          "type": "input",
+          "prompt": "Complétez avec le bon classificateur :",
+          "text": "一___纸 (une feuille de papier)",
+          "answers": [
+            "张"
+          ],
+          "explanation": "张 (zhāng) pour les objets plats."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,565 @@
+{
+  "id": "allemand",
+  "name": "Allemand",
+  "language": "de",
+  "lessons": [
+    {
+      "id": "de-genre",
+      "title": "Le genre des noms : der, die, das",
+      "level": "a1",
+      "summary": "Masculin, féminin, neutre : apprendre chaque nom avec son article.",
+      "sections": [
+        {
+          "title": "Trois genres",
+          "body": "En allemand, chaque nom a un genre : masculin (der), féminin (die) ou neutre (das). Le genre ne correspond pas toujours au français : apprenez toujours le nom AVEC son article.\nAu pluriel, l'article est « die » pour les trois genres. Les noms prennent toujours une majuscule.",
+          "examples": [
+            {
+              "text": "der Tisch",
+              "translation": "la table (masculin)"
+            },
+            {
+              "text": "die Lampe",
+              "translation": "la lampe (féminin)"
+            },
+            {
+              "text": "das Buch",
+              "translation": "le livre (neutre)"
+            },
+            {
+              "text": "die Bücher",
+              "translation": "les livres (pluriel)"
+            }
+          ]
+        },
+        {
+          "title": "Indices pour deviner le genre",
+          "body": "• Féminin (die) : noms en -ung, -heit, -keit, -schaft, -ion, -tät.\n• Neutre (das) : diminutifs en -chen et -lein, infinitifs employés comme noms.\n• Masculin (der) : jours, mois, saisons, noms en -er désignant une personne qui agit.\nPiège : « das Mädchen » (la jeune fille) est neutre à cause du suffixe -chen.",
+          "examples": [
+            {
+              "text": "die Zeitung",
+              "translation": "le journal"
+            },
+            {
+              "text": "die Freiheit",
+              "translation": "la liberté"
+            },
+            {
+              "text": "das Mädchen",
+              "translation": "la jeune fille"
+            },
+            {
+              "text": "der Montag",
+              "translation": "le lundi"
+            },
+            {
+              "text": "der Lehrer",
+              "translation": "le professeur"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "___ Zeitung",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 1,
+          "explanation": "Les noms en -ung sont féminins : die Zeitung."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "___ Mädchen",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 2,
+          "explanation": "Le suffixe -chen rend le nom neutre : das Mädchen."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "___ Sommer",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 0,
+          "explanation": "Les saisons sont masculines : der Sommer."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "___ Freundschaft",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 1,
+          "explanation": "Les noms en -schaft sont féminins : die Freundschaft."
+        },
+        {
+          "type": "choice",
+          "prompt": "Quel est l'article au pluriel ?",
+          "text": "___ Kinder (les enfants)",
+          "options": [
+            "der",
+            "die",
+            "das",
+            "den"
+          ],
+          "answer": 1,
+          "explanation": "Au nominatif pluriel, l'article est toujours « die »."
+        },
+        {
+          "type": "input",
+          "prompt": "Écrivez en allemand, avec l'article : « le livre »",
+          "text": "",
+          "answers": [
+            "das Buch"
+          ],
+          "explanation": "Buch est neutre : das Buch."
+        },
+        {
+          "type": "input",
+          "prompt": "Écrivez en allemand, avec l'article : « la liberté »",
+          "text": "",
+          "answers": [
+            "die Freiheit"
+          ],
+          "explanation": "Les noms en -heit sont féminins."
+        }
+      ]
+    },
+    {
+      "id": "de-cas",
+      "title": "Les cas : nominatif, accusatif, datif, génitif",
+      "level": "a2",
+      "summary": "La déclinaison de l'article selon la fonction du nom dans la phrase.",
+      "sections": [
+        {
+          "title": "À quoi servent les cas ?",
+          "body": "L'article (et parfois le nom ou l'adjectif) change selon la fonction du groupe nominal :\n• Nominatif : sujet. Qui fait l'action ?\n• Accusatif : complément d'objet direct. Qui ? Quoi ?\n• Datif : complément d'objet indirect (à qui ?), et après certaines prépositions.\n• Génitif : complément du nom (de qui ?).",
+          "examples": [
+            {
+              "text": "Der Mann liest.",
+              "translation": "L'homme lit. (nominatif)"
+            },
+            {
+              "text": "Ich sehe den Mann.",
+              "translation": "Je vois l'homme. (accusatif)"
+            },
+            {
+              "text": "Ich gebe dem Mann das Buch.",
+              "translation": "Je donne le livre à l'homme. (datif)"
+            },
+            {
+              "text": "Das Auto des Mannes ist rot.",
+              "translation": "La voiture de l'homme est rouge. (génitif)"
+            }
+          ]
+        },
+        {
+          "title": "Tableau de l'article défini",
+          "body": "• Nominatif : der · die · das · die (pluriel)\n• Accusatif : den · die · das · die\n• Datif : dem · der · dem · den (+ -n au nom pluriel)\n• Génitif : des (+ -s/-es au nom) · der · des (+ -s/-es) · der\nSeul le masculin change à l'accusatif (der → den). Le datif pluriel ajoute -n au nom : mit den Kindern.",
+          "examples": []
+        },
+        {
+          "title": "Tableau de l'article indéfini",
+          "body": "• Nominatif : ein · eine · ein\n• Accusatif : einen · eine · ein\n• Datif : einem · einer · einem\n• Génitif : eines · einer · eines\nLa négation « kein » se décline exactement de la même façon (keinen, keinem…).",
+          "examples": [
+            {
+              "text": "Ich habe einen Bruder.",
+              "translation": "J'ai un frère."
+            },
+            {
+              "text": "Ich habe keinen Hund.",
+              "translation": "Je n'ai pas de chien."
+            }
+          ]
+        },
+        {
+          "title": "Verbes suivis du datif",
+          "body": "Certains verbes très courants se construisent avec le datif alors qu'en français ils ont un COD : helfen (aider), danken (remercier), gefallen (plaire), gehören (appartenir), antworten (répondre).",
+          "examples": [
+            {
+              "text": "Ich helfe der Frau.",
+              "translation": "J'aide la femme."
+            },
+            {
+              "text": "Das Buch gehört dem Lehrer.",
+              "translation": "Le livre appartient au professeur."
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Ich sehe ___ Mann.",
+          "options": [
+            "der",
+            "den",
+            "dem",
+            "des"
+          ],
+          "answer": 1,
+          "explanation": "« Mann » est COD (accusatif) et masculin : der → den."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Ich helfe ___ Frau.",
+          "options": [
+            "die",
+            "der",
+            "den",
+            "das"
+          ],
+          "answer": 1,
+          "explanation": "« helfen » est suivi du datif ; féminin datif : der."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Ich gebe ___ Kind einen Apfel.",
+          "options": [
+            "das",
+            "der",
+            "dem",
+            "den"
+          ],
+          "answer": 2,
+          "explanation": "L'enfant est celui à qui l'on donne : datif neutre « dem »."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Das ist das Haus ___ Vaters.",
+          "options": [
+            "der",
+            "dem",
+            "des",
+            "den"
+          ],
+          "answer": 2,
+          "explanation": "Complément du nom : génitif masculin « des », et le nom prend -s."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la forme correcte :",
+          "text": "Ich habe ___ Hund.",
+          "options": [
+            "ein",
+            "einen",
+            "einem",
+            "eines"
+          ],
+          "answer": 1,
+          "explanation": "Accusatif masculin de l'indéfini : einen."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la phrase correcte :",
+          "text": "",
+          "options": [
+            "Ich danke dich.",
+            "Ich danke dir.",
+            "Ich danke du.",
+            "Ich danke dein."
+          ],
+          "answer": 1,
+          "explanation": "« danken » se construit avec le datif : dir."
+        },
+        {
+          "type": "input",
+          "prompt": "Complétez avec l'article défini (datif pluriel) :",
+          "text": "Ich spiele mit ___ Kindern.",
+          "answers": [
+            "den"
+          ],
+          "explanation": "Datif pluriel : den, et le nom prend -n : den Kindern."
+        },
+        {
+          "type": "input",
+          "prompt": "Traduisez : « Je vois le chien. » (der Hund)",
+          "text": "",
+          "answers": [
+            "Ich sehe den Hund"
+          ],
+          "explanation": "Le chien est COD : accusatif masculin « den »."
+        }
+      ]
+    },
+    {
+      "id": "de-prepositions",
+      "title": "Prépositions et cas",
+      "level": "a2",
+      "summary": "Prépositions + accusatif, + datif, et prépositions mixtes (wo? / wohin?).",
+      "sections": [
+        {
+          "title": "Toujours avec l'accusatif",
+          "body": "durch (à travers), für (pour), gegen (contre), ohne (sans), um (autour de).\nMoyen mnémotechnique : « DOGFU » (durch, ohne, gegen, für, um).",
+          "examples": [
+            {
+              "text": "Das Geschenk ist für den Vater.",
+              "translation": "Le cadeau est pour le père."
+            },
+            {
+              "text": "Wir gehen durch den Park.",
+              "translation": "Nous traversons le parc."
+            }
+          ]
+        },
+        {
+          "title": "Toujours avec le datif",
+          "body": "aus (de, hors de), bei (chez), mit (avec), nach (après, vers), seit (depuis), von (de), zu (chez, vers), gegenüber (en face de).",
+          "examples": [
+            {
+              "text": "Ich fahre mit dem Bus.",
+              "translation": "Je prends le bus."
+            },
+            {
+              "text": "Er wohnt bei seiner Mutter.",
+              "translation": "Il habite chez sa mère."
+            },
+            {
+              "text": "Ich komme aus der Schweiz.",
+              "translation": "Je viens de Suisse."
+            }
+          ]
+        },
+        {
+          "title": "Prépositions mixtes : wo? ou wohin?",
+          "body": "an, auf, hinter, in, neben, über, unter, vor, zwischen.\n• Changement de lieu, déplacement (wohin ? où vas-tu ?) → accusatif.\n• Position, sans déplacement (wo ? où es-tu ?) → datif.",
+          "examples": [
+            {
+              "text": "Ich lege das Buch auf den Tisch.",
+              "translation": "Je pose le livre sur la table. (wohin → accusatif)"
+            },
+            {
+              "text": "Das Buch liegt auf dem Tisch.",
+              "translation": "Le livre est sur la table. (wo → datif)"
+            },
+            {
+              "text": "Ich gehe in die Schule.",
+              "translation": "Je vais à l'école. (accusatif)"
+            },
+            {
+              "text": "Ich bin in der Schule.",
+              "translation": "Je suis à l'école. (datif)"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Ich fahre mit ___ Zug.",
+          "options": [
+            "den",
+            "dem",
+            "der",
+            "das"
+          ],
+          "answer": 1,
+          "explanation": "« mit » + datif ; der Zug (masculin) → dem."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Das ist für ___ Mutter.",
+          "options": [
+            "die",
+            "der",
+            "dem",
+            "den"
+          ],
+          "answer": 0,
+          "explanation": "« für » + accusatif ; féminin accusatif : die."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Ich lege das Handy auf ___ Tisch.",
+          "options": [
+            "dem",
+            "den",
+            "der",
+            "des"
+          ],
+          "answer": 1,
+          "explanation": "Déplacement (wohin ?) → accusatif masculin : den."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Das Handy liegt auf ___ Tisch.",
+          "options": [
+            "dem",
+            "den",
+            "der",
+            "die"
+          ],
+          "answer": 0,
+          "explanation": "Position (wo ?) → datif masculin : dem."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Wir wohnen in ___ Stadt.",
+          "options": [
+            "die",
+            "der",
+            "den",
+            "das"
+          ],
+          "answer": 1,
+          "explanation": "Position (wo ?) → datif ; die Stadt (féminin) → der."
+        },
+        {
+          "type": "choice",
+          "prompt": "Complétez avec l'article qui convient :",
+          "text": "Er geht ohne ___ Freund.",
+          "options": [
+            "seinem",
+            "seinen",
+            "seiner",
+            "sein"
+          ],
+          "answer": 1,
+          "explanation": "« ohne » + accusatif ; masculin accusatif : seinen."
+        },
+        {
+          "type": "input",
+          "prompt": "Complétez :",
+          "text": "Ich komme aus ___ Küche. (die Küche)",
+          "answers": [
+            "der"
+          ],
+          "explanation": "« aus » + datif ; féminin datif : der."
+        }
+      ]
+    },
+    {
+      "id": "de-verbe",
+      "title": "La place du verbe",
+      "level": "b1",
+      "summary": "Verbe en 2e position, verbe à la fin dans la subordonnée.",
+      "sections": [
+        {
+          "title": "Le verbe conjugué en 2e position",
+          "body": "Dans la phrase déclarative, le verbe conjugué occupe la 2e place. Si la phrase commence par un complément, le sujet passe APRÈS le verbe (inversion).",
+          "examples": [
+            {
+              "text": "Ich gehe heute ins Kino.",
+              "translation": "Je vais au cinéma aujourd'hui."
+            },
+            {
+              "text": "Heute gehe ich ins Kino.",
+              "translation": "Aujourd'hui, je vais au cinéma."
+            }
+          ]
+        },
+        {
+          "title": "Infinitif et participe à la fin",
+          "body": "Avec un auxiliaire ou un verbe de modalité, le 2e verbe (infinitif ou participe passé) part à la fin de la phrase.",
+          "examples": [
+            {
+              "text": "Ich kann heute nicht kommen.",
+              "translation": "Je ne peux pas venir aujourd'hui."
+            },
+            {
+              "text": "Wir haben einen Film gesehen.",
+              "translation": "Nous avons vu un film."
+            }
+          ]
+        },
+        {
+          "title": "Subordonnée : verbe à la fin",
+          "body": "Après weil (parce que), dass (que), wenn (si, quand), ob (si), obwohl (bien que)…, le verbe conjugué se place à la FIN de la subordonnée. Si la subordonnée est en tête, la principale commence par le verbe.",
+          "examples": [
+            {
+              "text": "Ich bleibe zu Hause, weil ich krank bin.",
+              "translation": "Je reste à la maison parce que je suis malade."
+            },
+            {
+              "text": "Weil ich krank bin, bleibe ich zu Hause.",
+              "translation": "Comme je suis malade, je reste à la maison."
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Choisissez la phrase correcte :",
+          "text": "",
+          "options": [
+            "Morgen ich fahre nach Berlin.",
+            "Morgen fahre ich nach Berlin.",
+            "Morgen nach Berlin ich fahre."
+          ],
+          "answer": 1,
+          "explanation": "Le verbe reste en 2e position : inversion du sujet après « Morgen »."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la phrase correcte :",
+          "text": "",
+          "options": [
+            "Ich weiß, dass er kommt.",
+            "Ich weiß, dass er kommt nicht morgen.",
+            "Ich weiß, dass kommt er."
+          ],
+          "answer": 0,
+          "explanation": "Après « dass », le verbe conjugué va à la fin."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la phrase correcte :",
+          "text": "",
+          "options": [
+            "Ich habe gesehen den Film.",
+            "Ich habe den Film gesehen.",
+            "Ich den Film habe gesehen."
+          ],
+          "answer": 1,
+          "explanation": "Le participe passé se place à la fin."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la phrase correcte :",
+          "text": "",
+          "options": [
+            "Weil es regnet, ich bleibe hier.",
+            "Weil es regnet, bleibe ich hier.",
+            "Weil regnet es, bleibe ich hier."
+          ],
+          "answer": 1,
+          "explanation": "Verbe à la fin de la subordonnée, puis la principale commence par le verbe."
+        },
+        {
+          "type": "input",
+          "prompt": "Remettez dans l'ordre : (kann / ich / schwimmen / nicht)",
+          "text": "",
+          "answers": [
+            "Ich kann nicht schwimmen"
+          ],
+          "explanation": "Verbe de modalité en 2e position, infinitif à la fin."
+        }
+      ]
+    }
+  ]
+}

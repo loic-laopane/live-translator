@@ -25,6 +25,8 @@ class LanguageToolClient(
             put("text", text)
             put("language", "auto")
             put("preferredVariants", PREFERRED_VARIANTS)
+            // "picky" enables extra rules (style, stricter grammar) that the default level skips.
+            put("level", "picky")
             if (!motherTongue.isNullOrBlank()) put("motherTongue", motherTongue)
         }
         val body = params.entries.joinToString("&") { (k, v) ->

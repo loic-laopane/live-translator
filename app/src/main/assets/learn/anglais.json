@@ -1,159 +1,417 @@
 {
   "id": "anglais",
   "name": "Anglais",
-  "translatable": false,
+  "language": "en",
   "lessons": [
+    {
+      "id": "en-be",
+      "title": "Le verbe « to be » et les pronoms",
+      "level": "a1",
+      "summary": "Être : formes affirmatives, négatives et interrogatives.",
+      "sections": [
+        {
+          "title": "Conjugaison au présent",
+          "body": "I am · you are · he / she / it is · we are · you are · they are.\nÀ l'oral, on utilise les contractions : I'm, you're, he's, we're, they're.",
+          "examples": [
+            {
+              "text": "I am French.",
+              "translation": "Je suis français."
+            },
+            {
+              "text": "She's a doctor.",
+              "translation": "Elle est médecin."
+            },
+            {
+              "text": "They are at home.",
+              "translation": "Ils sont à la maison."
+            }
+          ]
+        },
+        {
+          "title": "Négation et question",
+          "body": "• Négation : on ajoute « not » après le verbe : isn't, aren't (mais I'm not).\n• Question : on inverse le verbe et le sujet.\nAttention : « avoir faim / froid / 20 ans » se dit avec « be » en anglais.",
+          "examples": [
+            {
+              "text": "He isn't tired.",
+              "translation": "Il n'est pas fatigué."
+            },
+            {
+              "text": "Are you ready?",
+              "translation": "Es-tu prêt ?"
+            },
+            {
+              "text": "I'm hungry.",
+              "translation": "J'ai faim."
+            },
+            {
+              "text": "She is twenty years old.",
+              "translation": "Elle a vingt ans."
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "They ___ students.",
+          "options": [
+            "is",
+            "am",
+            "are"
+          ],
+          "answer": 2,
+          "explanation": "Avec « they », on utilise « are »."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "___ she your sister?",
+          "options": [
+            "Are",
+            "Is",
+            "Am"
+          ],
+          "answer": 1,
+          "explanation": "Question avec « she » : Is she…?"
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "I ___ not hungry.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ],
+          "answer": 0,
+          "explanation": "Avec « I », toujours « am »."
+        },
+        {
+          "type": "choice",
+          "prompt": "Comment dit-on « J'ai 15 ans » ?",
+          "text": "",
+          "options": [
+            "I have 15 years.",
+            "I am 15 years old.",
+            "I have 15 years old."
+          ],
+          "answer": 1,
+          "explanation": "En anglais, l'âge s'exprime avec « be » : I am 15 (years old)."
+        },
+        {
+          "type": "input",
+          "prompt": "Traduisez : « Nous sommes contents. » (happy)",
+          "text": "",
+          "answers": [
+            "We are happy",
+            "We're happy"
+          ],
+          "explanation": "« we » + « are » ; contraction possible : we're."
+        },
+        {
+          "type": "input",
+          "prompt": "Mettez à la forme négative contractée :",
+          "text": "He is late.",
+          "answers": [
+            "He isn't late",
+            "He's not late"
+          ],
+          "explanation": "is not → isn't."
+        }
+      ]
+    },
+    {
+      "id": "en-present",
+      "title": "Present simple ou present continuous ?",
+      "level": "a2",
+      "summary": "Habitudes ou action en cours : bien choisir son présent.",
+      "sections": [
+        {
+          "title": "Present simple : habitudes et vérités",
+          "body": "Il exprime une habitude, une généralité, un goût. À la 3e personne du singulier, on ajoute -s.\nNégation et question avec do / does.\nMots fréquents : always, usually, often, every day, never.",
+          "examples": [
+            {
+              "text": "She plays tennis every Sunday.",
+              "translation": "Elle joue au tennis tous les dimanches."
+            },
+            {
+              "text": "I don't like coffee.",
+              "translation": "Je n'aime pas le café."
+            },
+            {
+              "text": "Does he work here?",
+              "translation": "Travaille-t-il ici ?"
+            }
+          ]
+        },
+        {
+          "title": "Present continuous : action en cours",
+          "body": "be + verbe en -ing. Il décrit ce qui se passe en ce moment ou une situation temporaire.\nMots fréquents : now, right now, at the moment, today.\nPiège : les verbes d'état (know, like, want, understand, believe) ne se mettent pas au continuous.",
+          "examples": [
+            {
+              "text": "I'm reading a book right now.",
+              "translation": "Je lis un livre en ce moment."
+            },
+            {
+              "text": "I know the answer.",
+              "translation": "Je connais la réponse. (et non « I'm knowing »)"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "Look! It ___ .",
+          "options": [
+            "rains",
+            "is raining",
+            "rain"
+          ],
+          "answer": 1,
+          "explanation": "« Look! » : action en cours → present continuous."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "He ___ to school every day.",
+          "options": [
+            "go",
+            "goes",
+            "is going"
+          ],
+          "answer": 1,
+          "explanation": "Habitude, 3e personne : goes."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "I ___ what you mean.",
+          "options": [
+            "understand",
+            "am understanding",
+            "understands"
+          ],
+          "answer": 0,
+          "explanation": "« understand » est un verbe d'état : pas de forme en -ing."
+        },
+        {
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "___ you speak German?",
+          "options": [
+            "Are",
+            "Do",
+            "Does"
+          ],
+          "answer": 1,
+          "explanation": "Question au present simple avec « you » : Do."
+        },
+        {
+          "type": "input",
+          "prompt": "Conjuguez au present continuous :",
+          "text": "They (watch) TV at the moment.",
+          "answers": [
+            "They are watching TV at the moment",
+            "They're watching TV at the moment"
+          ],
+          "explanation": "be + verbe-ing : they are watching."
+        }
+      ]
+    },
     {
       "id": "en-present-perfect",
       "title": "Present perfect ou prétérit ?",
-      "level": "seconde",
+      "level": "b1",
       "summary": "Choisir entre « I did » et « I have done ».",
       "sections": [
         {
-          "title": "Le prétérit (simple past)",
-          "body": "Il exprime une action terminée, située à un moment précis du passé, coupé du présent.\n• I visited London in 2019.\nMots déclencheurs : yesterday, last week, in 2010, ago, when I was a child."
+          "title": "Le prétérit",
+          "body": "Action terminée, datée, coupée du présent. Mots déclencheurs : yesterday, last week, in 2010, ago.",
+          "examples": [
+            {
+              "text": "I visited London in 2019.",
+              "translation": "J'ai visité Londres en 2019."
+            },
+            {
+              "text": "She called me two days ago.",
+              "translation": "Elle m'a appelé il y a deux jours."
+            }
+          ]
         },
         {
-          "title": "Le present perfect (have + participe passé)",
-          "body": "Il fait le lien entre le passé et le présent : bilan, expérience, conséquence actuelle.\n• I have visited London three times. (expérience, sans date)\n• She has lost her keys. (elle ne les a toujours pas)\nMots déclencheurs : ever, never, already, yet, just, so far."
+          "title": "Le present perfect",
+          "body": "have/has + participe passé. Lien avec le présent : expérience, bilan, conséquence actuelle.\nMots déclencheurs : ever, never, already, yet, just.",
+          "examples": [
+            {
+              "text": "Have you ever been to Japan?",
+              "translation": "Es-tu déjà allé au Japon ?"
+            },
+            {
+              "text": "She has lost her keys.",
+              "translation": "Elle a perdu ses clés. (elle ne les a pas retrouvées)"
+            }
+          ]
         },
         {
           "title": "since / for",
-          "body": "Pour une action commencée dans le passé et qui dure encore, l'anglais utilise le present perfect (et non le présent comme en français !).\n• I have lived here for ten years. (durée)\n• I have lived here since 2015. (point de départ)\nPiège : « J'habite ici depuis 10 ans » ≠ « I live here for 10 years »."
+          "body": "Action commencée dans le passé qui dure encore : present perfect, alors que le français utilise le présent !\n• for + durée · since + point de départ.",
+          "examples": [
+            {
+              "text": "I have lived here for ten years.",
+              "translation": "J'habite ici depuis dix ans."
+            },
+            {
+              "text": "I have lived here since 2015.",
+              "translation": "J'habite ici depuis 2015."
+            }
+          ]
         }
       ],
-      "quiz": [
+      "exercises": [
         {
-          "question": "« I … to Spain last summer. »",
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "I ___ to Spain last summer.",
           "options": [
             "have gone",
             "went",
-            "have been",
-            "go"
+            "have been"
           ],
           "answer": 1,
-          "explanation": "« last summer » date l'action dans un passé terminé : prétérit."
+          "explanation": "« last summer » date l'action : prétérit."
         },
         {
-          "question": "« … you ever … sushi? »",
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "___ you ever ___ sushi?",
           "options": [
             "Did / eat",
             "Have / eaten",
-            "Do / eat",
-            "Has / ate"
+            "Do / eat"
           ],
           "answer": 1,
-          "explanation": "« ever » interroge sur l'expérience : present perfect."
+          "explanation": "« ever » : expérience → present perfect."
         },
         {
-          "question": "« She has worked here … 2018. »",
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "She has worked here ___ 2018.",
           "options": [
             "for",
             "since",
-            "ago",
-            "during"
+            "ago"
           ],
           "answer": 1,
-          "explanation": "2018 est un point de départ : « since »."
+          "explanation": "2018 est un point de départ : since."
         },
         {
-          "question": "« We … each other for five years. »",
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "We ___ each other for five years.",
           "options": [
             "know",
             "knew",
-            "have known",
-            "are knowing"
+            "have known"
           ],
           "answer": 2,
-          "explanation": "Action qui dure encore aujourd'hui avec « for » : present perfect."
+          "explanation": "Durée qui continue jusqu'à aujourd'hui : present perfect."
         },
         {
-          "question": "« I saw him two days … »",
-          "options": [
-            "since",
-            "for",
-            "ago",
-            "yet"
+          "type": "input",
+          "prompt": "Traduisez : « J'habite ici depuis deux ans. »",
+          "text": "",
+          "answers": [
+            "I have lived here for two years",
+            "I've lived here for two years"
           ],
-          "answer": 2,
-          "explanation": "« ago » s'emploie avec le prétérit pour dater une action passée."
+          "explanation": "Action qui dure encore : present perfect + for."
         }
       ]
     },
     {
       "id": "en-conditionals",
       "title": "Les phrases conditionnelles (if)",
-      "level": "premiere",
-      "summary": "Les trois types de conditionnelles et leurs temps.",
+      "level": "b1",
+      "summary": "Types 0, 1, 2 et 3.",
       "sections": [
         {
-          "title": "Type 0 et type 1 : réel",
-          "body": "• Type 0 (vérité générale) : If + présent, présent. If you heat ice, it melts.\n• Type 1 (possible dans le futur) : If + présent, will + base verbale. If it rains, I will stay home.\nPiège : jamais de « will » après « if » ! ✗ If it will rain…"
+          "title": "Réel : types 0 et 1",
+          "body": "• Type 0 (vérité générale) : If + présent, présent.\n• Type 1 (futur possible) : If + présent, will + verbe.\nPiège : jamais de « will » juste après « if ».",
+          "examples": [
+            {
+              "text": "If you heat ice, it melts.",
+              "translation": "Si on chauffe de la glace, elle fond."
+            },
+            {
+              "text": "If it rains, I will stay home.",
+              "translation": "S'il pleut, je resterai à la maison."
+            }
+          ]
         },
         {
-          "title": "Type 2 : hypothèse irréelle au présent",
-          "body": "If + prétérit, would + base verbale.\n• If I had money, I would travel.\nAvec « be », on peut utiliser « were » à toutes les personnes : If I were you, I would accept."
-        },
-        {
-          "title": "Type 3 : regret, passé irréel",
-          "body": "If + past perfect (had + participe passé), would have + participe passé.\n• If I had studied, I would have passed the exam. (mais je n'ai pas révisé)"
+          "title": "Irréel : types 2 et 3",
+          "body": "• Type 2 (hypothèse au présent) : If + prétérit, would + verbe. « were » à toutes les personnes.\n• Type 3 (regret, passé) : If + had + participe passé, would have + participe passé.",
+          "examples": [
+            {
+              "text": "If I were you, I would accept.",
+              "translation": "À ta place, j'accepterais."
+            },
+            {
+              "text": "If I had studied, I would have passed.",
+              "translation": "Si j'avais révisé, j'aurais réussi."
+            }
+          ]
         }
       ],
-      "quiz": [
+      "exercises": [
         {
-          "question": "« If it … tomorrow, we will cancel the trip. »",
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "If it ___ tomorrow, we will cancel.",
           "options": [
             "will rain",
             "rains",
-            "rained",
-            "would rain"
+            "rained"
           ],
           "answer": 1,
-          "explanation": "Type 1 : If + présent, will + verbe. Pas de « will » après « if »."
+          "explanation": "Type 1 : If + présent."
         },
         {
-          "question": "« If I … rich, I would buy a boat. »",
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "If I ___ rich, I would buy a boat.",
           "options": [
             "am",
-            "will be",
             "were",
-            "have been"
+            "will be"
           ],
-          "answer": 2,
-          "explanation": "Type 2 (irréel du présent) : If + prétérit ; « were » à toutes les personnes."
+          "answer": 1,
+          "explanation": "Type 2 : If + prétérit (were)."
         },
         {
-          "question": "« If she had called me, I … her. »",
+          "type": "choice",
+          "prompt": "Choisissez la bonne réponse :",
+          "text": "If she had called, I ___ her.",
           "options": [
             "would help",
             "will help",
-            "would have helped",
-            "helped"
+            "would have helped"
           ],
           "answer": 2,
-          "explanation": "Type 3 : If + past perfect, would have + participe passé."
+          "explanation": "Type 3 : would have + participe."
         },
         {
-          "question": "« If you mix blue and yellow, you … green. »",
-          "options": [
-            "get",
-            "will got",
-            "would get",
-            "got"
+          "type": "input",
+          "prompt": "Complétez (type 2) :",
+          "text": "If I had time, I ___ (travel) more.",
+          "answers": [
+            "would travel",
+            "'d travel"
           ],
-          "answer": 0,
-          "explanation": "Vérité générale : type 0, présent dans les deux propositions."
-        },
-        {
-          "question": "« If I were you, I … that. »",
-          "options": [
-            "won't do",
-            "wouldn't do",
-            "don't do",
-            "didn't do"
-          ],
-          "answer": 1,
-          "explanation": "Conseil avec « If I were you » : type 2, would + base verbale."
+          "explanation": "Type 2 : would + verbe."
         }
       ]
     }

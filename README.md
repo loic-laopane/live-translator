@@ -24,31 +24,31 @@ Application Android qui traduit **en direct** ce que vous écrivez vers la langu
 - **Règles expliquées dans votre langue** : chaque faute est accompagnée de la règle de grammaire
   ou du piège concerné (ex. « Confusion a/à »), avec un lien « En savoir plus » quand il existe.
   L'explication, le nom de la règle et sa catégorie sont traduits dans votre langue maternelle.
-- **Apprendre : mini-cours et quiz** de la seconde à la terminale (voir ci-dessous).
+- **Apprendre : cours de langues** (anglais, allemand, espagnol, chinois, français) avec exercices (voir ci-dessous).
 
-## Apprendre : mini-cours et quiz
+## Apprendre : cours de langues
 
-L'onglet **Apprendre** propose des fiches de cours courtes suivies d'un quiz de 5 questions avec
-correction expliquée. Le meilleur score de chaque leçon est mémorisé.
+L'onglet **Apprendre** propose des leçons courtes (niveaux du CECRL, A1 à B2) : une règle, des
+**exemples à écouter** (synthèse vocale du téléphone), puis des **exercices** à choix multiple ou à
+écrire, corrigés et expliqués. Le meilleur score de chaque leçon est mémorisé.
 
-| Matière | Seconde | Première | Terminale |
+| Langue | A1 | A2 | B1 |
 |---|---|---|---|
-| Français | Accord du participe passé · Homophones grammaticaux | Figures de style | |
-| Mathématiques | Fonctions affines | Second degré | Fonction exponentielle |
-| Anglais | Present perfect / prétérit | Phrases conditionnelles | |
-| Physique-Chimie | Mole et quantité de matière | Énergie cinétique, potentielle, mécanique | |
-| SVT | La cellule | | Mitose et méiose |
-| Histoire-Géographie | | Révolution française | Guerre froide |
-| Philosophie | | | Méthode de la dissertation · La conscience |
+| Anglais | Le verbe « to be » | Present simple / continuous | Present perfect · Conditionnelles |
+| Allemand | Genre des noms (der/die/das) | Les cas (déclinaisons) · Prépositions et cas | Place du verbe |
+| Espagnol | Ser / estar · Gustar | Pretérito indefinido | |
+| Chinois | Les tons · Se présenter | Classificateurs | |
+| Français | | Homophones grammaticaux | Accord du participe passé |
 
-Les cours sont rédigés en français. Si votre langue maternelle est différente, ils sont **traduits
-automatiquement sur l'appareil** (bouton « Voir l'original » disponible), sauf le français et
-l'anglais, dont les exemples et réponses portent sur la langue elle-même. Les réponses chiffrées
-ou formules ne sont jamais traduites.
+Les explications sont rédigées en français et **traduites dans votre langue maternelle** sur
+l'appareil. Les exemples et les phrases d'exercice, eux, restent dans la langue étudiée. Le cours
+correspondant à votre langue maternelle est masqué.
 
-**Ajouter une leçon** : éditer le fichier de la matière dans `app/src/main/assets/learn/`
-(format : `sections` avec `title`/`body`, `quiz` avec `question`/`options`/`answer` (index de la
-bonne réponse)/`explanation`). Le test `LearnContentTest` vérifie automatiquement chaque fichier.
+**Ajouter une leçon** : éditer le fichier de la langue dans `app/src/main/assets/learn/`.
+Chaque section a un `title`, un `body` (explication) et des `examples` (`text`, `pronunciation`
+facultatif, `translation`). Les `exercises` sont de type `choice` (`options`, `answer` = index de la
+bonne réponse, `translateOptions` si les choix sont des traductions) ou `input` (`answers` acceptées).
+Le test `LearnContentTest` vérifie automatiquement chaque fichier.
 
 ## Correction grammaticale (LanguageTool)
 
@@ -57,7 +57,9 @@ La correction utilise l'API publique gratuite de [LanguageTool](https://language
 - le texte saisi est **envoyé aux serveurs de LanguageTool** pour la vérification ; un interrupteur
   dans l'app permet de désactiver la correction (la traduction reste 100 % sur l'appareil) ;
 - l'API gratuite est limitée à ~20 vérifications par minute : la vérification attend 0,9 s
-  après la dernière frappe.
+  après la dernière frappe ;
+- le niveau « picky » est activé pour détecter davantage de fautes, mais l'API gratuite ne repère
+  pas toutes les erreurs de déclinaison en allemand (rection des prépositions et des verbes).
 
 ## Fonctionnement
 
@@ -74,8 +76,8 @@ Code principal :
 - `app/src/main/java/com/livetranslator/app/ui/TranslatorScreen.kt` – interface Jetpack Compose
 - `app/src/main/java/com/livetranslator/app/grammar/` – client LanguageTool, parsing, application des corrections
 - `app/src/main/java/com/livetranslator/app/ui/GrammarSection.kt` – version corrigée et cartes « règle »
-- `app/src/main/java/com/livetranslator/app/learn/` + `ui/LearnScreen.kt` – cours, quiz, progression
-- `app/src/main/assets/learn/*.json` – contenu des cours et des quiz
+- `app/src/main/java/com/livetranslator/app/learn/` + `ui/LearnScreen.kt` – cours de langues, exercices, prononciation
+- `app/src/main/assets/learn/*.json` – contenu des leçons et des exercices
 
 ## Compiler
 
